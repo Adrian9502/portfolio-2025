@@ -1,12 +1,13 @@
+import Landing from "./components/Landing";
+import Test from "./components/Test";
 import "./index.css";
+import Header from "./components/Header";
 function App() {
   return (
     <>
-      <div className="p-10 bg-neon-green">
-        <h1 className="text-3xl text-red-600 font-bold underline">
-          I CANT SEE THE INTELLISENSE
-        </h1>
-      </div>
+      <Header />
+      <Landing />
+      <Test />
     </>
   );
 }

@@ -1,0 +1,30 @@
+.section0:hover {
+  background: #2f46fa;
+  color: #d3d3fe;
+  box-shadow: 0 0 5px #2f46fa, 0 0 25px #2f46fa, 0 0 50px #2f46fa,
+    0 0 200px #2f46fa;
+}
+.section1:hover {
+  background: #55fc77;
+  color: #333;
+  box-shadow: 0 0 5px #55fc77, 0 0 25px #55fc77, 0 0 50px #55fc77,
+    0 0 200px #55fc77;
+}
+.section2:hover {
+  background: #fffe13;
+  color: #333;
+  box-shadow: 0 0 5px #fffe13, 0 0 25px #fffe13, 0 0 50px #fffe13,
+    0 0 200px #fffe13;
+}
+.section3:hover {
+  background: #fb41da;
+  color: #d3d3fe;
+  box-shadow: 0 0 5px #fb41da, 0 0 25px #fb41da, 0 0 50px #fb41da,
+    0 0 200px #fb41da;
+}
+.section4:hover {
+  background: #7e2de8;
+  color: #d3d3fe;
+  box-shadow: 0 0 5px #7e2de8, 0 0 25px #7e2de8, 0 0 50px #7e2de8,
+    0 0 200px #7e2de8;
+}
