@@ -1,5 +1,5 @@
 import Landing from "./components/Landing";
-import Test from "./components/Test";
+import About from "./components/About";
 import "./index.css";
 import Header from "./components/Header";
 function App() {
@@ -7,7 +7,7 @@ function App() {
     <>
       <Header />
       <Landing />
-      <Test />
+      <About />
     </>
   );
 }

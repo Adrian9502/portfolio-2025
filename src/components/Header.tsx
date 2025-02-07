@@ -69,21 +69,36 @@ function Header() {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex md:justify-center items-center justify-end space-x-6">
-          <div className="p-2 text-gray-100 text-sm cursor-pointer rounded-tl-2xl rounded-br-2xl section0 font-orbitron">
+          <a
+            href="#About"
+            className="p-2 text-gray-100 text-sm cursor-pointer rounded-tl-2xl rounded-br-2xl section0 font-orbitron"
+          >
             About
-          </div>
-          <div className="p-2 text-gray-100 text-sm cursor-pointer rounded-tl-2xl rounded-br-2xl section1 font-orbitron">
+          </a>
+          <a
+            href="#Skills"
+            className="p-2 text-gray-100 text-sm cursor-pointer rounded-tl-2xl rounded-br-2xl section1 font-orbitron"
+          >
             Skills
-          </div>
-          <div className="p-2 text-gray-100 text-sm cursor-pointer rounded-tl-2xl rounded-br-2xl section2 font-orbitron">
+          </a>
+          <a
+            href="#Projects"
+            className="p-2 text-gray-100 text-sm cursor-pointer rounded-tl-2xl rounded-br-2xl section2 font-orbitron"
+          >
             Projects
-          </div>
-          <div className="p-2  text-gray-100 text-sm cursor-pointer rounded-tl-2xl rounded-br-2xl section3 font-orbitron">
+          </a>
+          <a
+            href="#Certification"
+            className="p-2  text-gray-100 text-sm cursor-pointer rounded-tl-2xl rounded-br-2xl section3 font-orbitron"
+          >
             Certification
-          </div>
-          <div className="p-2 text-gray-100 text-sm cursor-pointer rounded-tl-2xl rounded-br-2xl section4 font-orbitron">
+          </a>
+          <a
+            href="#Contact"
+            className="p-2 text-gray-100 text-sm cursor-pointer rounded-tl-2xl rounded-br-2xl section4 font-orbitron"
+          >
             Contact
-          </div>
+          </a>
         </div>
 
         {/* Mobile Menu */}
@@ -95,7 +110,8 @@ function Header() {
             <div className="flex flex-col items-center p-4">
               {["About", "Skills", "Projects", "Certification", "Contact"].map(
                 (item, index) => (
-                  <div
+                  <a
+                    href={`#${item}`}
                     key={item}
                     ref={(el) => {
                       menuItemsRef.current[index] = el;
@@ -103,7 +119,7 @@ function Header() {
                     className={`p-2 w-full text-center text-white  border-b last:border-b-0 border-white/30 text-sm font-orbitron hover:bg-white/10 transition-colors section${index}`}
                   >
                     {item}
-                  </div>
+                  </a>
                 )
               )}
             </div>

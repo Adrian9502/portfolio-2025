@@ -9,4 +9,29 @@
   --color-neon-cyan: #00fefc;
   --font-orbitron: "Orbitron", sans-serif;
   --font-tektur: "Tektur", serif;
+  --font-jetbrains: "JetBrains Mono", serif;
+}
+
+.bg-texture {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%239C92AC' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+/* Apply custom scrollbar styles to the entire page */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020618;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #4f46e5;
+  border-radius: 10px;
+  border: 2px solid #1a1a1a;
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #4f46e5#000319;
 }
