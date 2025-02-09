@@ -1,30 +1,55 @@
-.section0:hover {
-  background: #2f46fa;
-  color: #d3d3fe;
-  box-shadow: 0 0 5px #2f46fa, 0 0 25px #2f46fa, 0 0 50px #2f46fa,
-    0 0 200px #2f46fa;
+/* Border trail animation */
+.border-trail {
+  --border-width: 2px;
+  --trail-size: 50px;
+  position: relative;
+  border: var(--border-width) solid transparent;
 }
-.section1:hover {
-  background: #55fc77;
-  color: #333;
-  box-shadow: 0 0 5px #55fc77, 0 0 25px #55fc77, 0 0 50px #55fc77,
-    0 0 200px #55fc77;
+
+.border-trail::before {
+  content: " ";
+  position: absolute;
+  inset: calc(var(--border-width) * -1);
+  z-index: -1;
+  border: inherit;
+  border-radius: inherit;
+  background-image: conic-gradient(
+    from var(--angle),
+    #1a2866 80%,
+    #7e2de8 88%,
+    #2f46fa 92%,
+    #7e2de8 100%
+  );
+  background-origin: border-box;
+  -webkit-mask: linear-gradient(black, black) content-box,
+    linear-gradient(black, black);
+  mask: linear-gradient(black, black), linear-gradient(black, black);
+  -webkit-mask-clip: content-box, border-box;
+  mask-clip: content-box, border-box;
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: spin 10s linear infinite;
 }
-.section2:hover {
-  background: #fffe13;
-  color: #333;
-  box-shadow: 0 0 5px #fffe13, 0 0 25px #fffe13, 0 0 50px #fffe13,
-    0 0 200px #fffe13;
+
+@supports not (background: paint(something)) {
+  .border-trail::before {
+    background-image: conic-gradient(
+      #242424 80%,
+      #7e2de8 88%,
+      #2f46fa 92%,
+      #7e2de8 100%
+    );
+  }
 }
-.section3:hover {
-  background: #fb41da;
-  color: #d3d3fe;
-  box-shadow: 0 0 5px #fb41da, 0 0 25px #fb41da, 0 0 50px #fb41da,
-    0 0 200px #fb41da;
+
+@property --angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0turn;
 }
-.section4:hover {
-  background: #7e2de8;
-  color: #d3d3fe;
-  box-shadow: 0 0 5px #7e2de8, 0 0 25px #7e2de8, 0 0 50px #7e2de8,
-    0 0 200px #7e2de8;
+
+@keyframes spin {
+  to {
+    --angle: 1turn;
+  }
 }

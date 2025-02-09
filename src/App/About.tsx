@@ -1,7 +1,7 @@
 import React from "react";
 import * as motion from "motion/react-client";
-import Title from "./Title";
-import Code from "./Code";
+import Title from "../components/Title";
+import Code from "../components/Code";
 
 import "../styles/glitch.css";
 // Define the animation variants
@@ -17,7 +17,10 @@ function About() {
   return (
     <main
       id="About"
-      className="flex items-center flex-col justify-around relative text-white bg-slate-950 bg-texture sm:p-14 py-10"
+      className="flex shadow-lg 
+           
+             before:absolute before:inset-x-0 before:top-0 before:h-26 before:bg-gradient-to-b 
+             before:from-black/60 before:to-transparent items-center flex-col justify-around relative text-white sm:p-14 py-10"
     >
       <div className="z-2 absolute lg:left-24 top-0 lg:top-20 -translate-x-1/2 transform rounded-full border-[200px] border-b-neon-blue border-l-violet-600 border-neon-pink border-t-neon-pink blur-[240px]"></div>
       <div className="z-2 absolute lg:right-24 bottom-0 lg:top-20 rounded-full border-[200px] border-b-neon-blue border-neon-pink border-r-neon-purple border-t-blue-400 blur-[200px]"></div>

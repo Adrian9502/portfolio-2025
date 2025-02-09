@@ -22,5 +22,13 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src"]
+  "include": [
+    "src",
+    "src/components/SocialIcons.tsx",
+    "src/components/Code.tsx",
+    "src/components/Title.tsx",
+    "src/components/VantaGlobe.tsx",
+    "src/components/VantaNet.tsx",
+    "src/components/SkillsGrid.tsx"
+  ]
 }

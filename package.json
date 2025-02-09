@@ -10,12 +10,19 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-three/drei": "^9.121.4",
+    "@react-three/fiber": "^8.17.14",
+    "@splinetool/loader": "^1.9.62",
+    "@splinetool/r3f-spline": "^1.0.2",
     "@tailwindcss/vite": "^4.0.3",
+    "gsap": "^3.12.7",
+    "lucide-react": "^0.475.0",
     "motion": "^12.3.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "tailwindcss": "^4.0.3",
     "three": "^0.173.0",
+    "three-gltf-exporter": "^0.0.1",
     "vanta": "^0.5.24"
   },
   "devDependencies": {
