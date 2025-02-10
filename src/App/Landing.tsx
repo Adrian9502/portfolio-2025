@@ -2,7 +2,6 @@ import * as motion from "motion/react-client";
 import "../styles/grid.css";
 import SocialIcons from "../components/SocialIcons";
 import socialLinks from "../utils/socialLinks";
-
 interface SocialLink {
   Icon: React.ElementType;
   link: string;
@@ -56,6 +55,7 @@ function Landing() {
               after:from-slate-950 after:via-stone-950/50 after:to-transparent"
       style={{ backgroundImage: 'url("https://i.imgur.com/YvUPGUK.jpg")' }}
     >
+      {/* animated grid */}
       <div className="grid absolute left-0 right-0 top-0 bottom-0">
         <div className="grid-fade"></div>
         <div className="grid-lines"></div>
@@ -124,9 +124,11 @@ function Landing() {
       </div>
 
       {/* Color overlays */}
-
-      <div className="absolute z-20 -right-[10vw] top-[40vh] rounded-full border-[500px] border-b-neon-cyan/70 border-l-rose-600/70 border-r-neon-blue/70 border-t-neon-green-400/40 blur-[200px]" />
-      <div className="absolute z-20 -left-[10vw] top-[40vh] rounded-full border-[500px] border-b-cyan-400/70 border-l-rose-600/70 border-r-neon-blue/70 border-t-neon-green-400/70 blur-[200px]" />
+      <div className="absolute z-20 -right-[10vw] top-[10vh] rounded-full border-[500px] border-b-neon-purple/70 border-l-rose-600/70 border-r-neon-blue/70 border-t-neon-pink/40 blur-[200px]" />
+      <div className="absolute z-20 -left-[10vw] top-[10vh] rounded-full border-[500px] border-b-neon-purple/70 border-l-rose-600/70 border-r-neon-blue/70 border-t-neon-pink-400/70 blur-[200px]" />
+      {/* -- black */}
+      <div className="absolute z-30 -right-[10vw] -bottom-[25vh] rounded-full border-[250px] border-black blur-[200px]" />
+      <div className="absolute z-30 -left-[10vw] -bottom-[25vh] rounded-full border-[250px] border-black blur-[200px]" />
     </main>
   );
 }

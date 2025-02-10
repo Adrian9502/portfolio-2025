@@ -19,7 +19,7 @@ function useTypingAnimation(words: Word[], typingSpeedInitial: number = 20) {
     if (currentWordIndex >= words.length) return;
 
     const currentWord = words[currentWordIndex].text;
-    let typingTimeout: NodeJS.Timeout;
+    let typingTimeout: ReturnType<typeof setTimeout>;
 
     // Typing effect
     if (text.length < currentWord.length) {
@@ -61,7 +61,7 @@ export default function Code() {
     { text: indent(4) + "role: ", color: "text-sky-400" },
     { text: `"Web Developer",\n`, color: "text-green-400" },
     { text: indent(4) + "hobbies: ", color: "text-sky-400" },
-    { text: `"Cycling, Exploring",\n`, color: "text-green-400" },
+    { text: `"Cycling, Coding",\n`, color: "text-green-400" },
     { text: indent(4) + "passion: ", color: "text-sky-400" },
     {
       text: `"I'm a web developer with a degree in \n`,
@@ -98,20 +98,22 @@ export default function Code() {
   const { typedWords, currentText } = useTypingAnimation(words);
 
   return (
-    <div className="flex flex-col items-center transition-all p-4">
-      <div className="w-full bg-slate-200 h-7 rounded-tl-lg rounded-tr-lg flex items-center pl-2 gap-1">
-        <span className="w-3 h-3 rounded-full bg-red-500"></span>
-        <span className="w-3 h-3 rounded-full bg-orange-500"></span>
-        <span className="w-3 h-3 rounded-full bg-green-500"></span>
-      </div>
-      <div className="text-lg p-3 bg-slate-900/80 border rounded-bl-lg rounded-br-lg w-full h-full text-slate-100 overflow-hidden ">
-        <div className="jetbrains font-jetbrains w-full h-full sm:w-[538px] sm:h-[306px] text-wrap text-sm sm:text-base p-1 whitespace-pre-line sm:whitespace-pre">
-          <ColorfulText
-            words={[
-              ...typedWords,
-              { text: currentText, color: "text-sky-600" },
-            ]}
-          />
+    <div className="relative">
+      <div className="flex flex-col items-center transition-all p-4">
+        <div className="w-full bg-slate-200 h-7 rounded-tl-lg rounded-tr-lg flex items-center pl-2 gap-1">
+          <span className="w-3 h-3 rounded-full bg-red-500"></span>
+          <span className="w-3 h-3 rounded-full bg-orange-500"></span>
+          <span className="w-3 h-3 rounded-full bg-green-500"></span>
+        </div>
+        <div className="text-lg p-3 bg-slate-900/80 border rounded-bl-lg rounded-br-lg w-full h-full text-slate-100 overflow-hidden ">
+          <div className="jetbrains font-jetbrains w-full h-full sm:w-[538px] sm:h-[306px] text-wrap text-sm sm:text-base p-1 whitespace-pre-line sm:whitespace-pre">
+            <ColorfulText
+              words={[
+                ...typedWords,
+                { text: currentText, color: "text-sky-600" },
+              ]}
+            />
+          </div>
         </div>
       </div>
     </div>

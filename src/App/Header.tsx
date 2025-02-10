@@ -5,6 +5,8 @@ import "../styles/header.css";
 import SocialIcons from "../components/SocialIcons";
 import socialLinks from "../utils/socialLinks";
 import navLinks from "../utils/navLinks";
+import logo from "/logo.png";
+
 interface SocialLink {
   Icon: React.ElementType;
   link: string;
@@ -91,10 +93,14 @@ function Header() {
         {/* Desktop Navigation */}
         <div className="hidden z-50 p-2 uppercase rounded-2xl bg-slate-950/80 backdrop-blur-xs border-trail md:flex md:justify-center items-center justify-center space-x-6">
           {/* Logo */}
-          <a href="/" className="px-3 transition-all duration-300">
-            <CodeXml
-              size={35}
-              className="text-neon-cyan drop-shadow-[0_0_5px_#fb41da]"
+          <a
+            href="/"
+            className="px-3 transition-all duration-300 border-r-2 border-slate-900"
+          >
+            <img
+              src={logo}
+              alt="coding logo"
+              className="w-10 h-10 drop-shadow-[0_0_3px_#2f46fa]"
             />
           </a>
 
@@ -116,7 +122,7 @@ function Header() {
           </div>
 
           {/* Social icons */}
-          <div className="px-1 flex items-center gap-2 justify-center transition-all duration-200">
+          <div className="px-2 border-l-2 border-slate-900 flex items-center gap-2 justify-center transition-all duration-200">
             {socialLinks.map(({ Icon, link, label }: SocialLink) => (
               <SocialIcons
                 key={label}
