@@ -37,7 +37,7 @@ function About() {
             variants={fadeInUp}
             transition={{ duration: 0.8, delay: 0.2 }} // Delay for the name
           >
-            <span className="drop-shadow-[0_0_2px_#2f46fa] font-jetbrains">
+            <span className="drop-shadow-[0_0_3px_#2f46fa] font-tektur">
               Hello! My name is
             </span>{" "}
             <br />
@@ -56,18 +56,22 @@ function About() {
             animate="visible"
             variants={fadeInUp}
             transition={{ duration: 0.8, delay: 0.4 }} // Delay for the description
-            className="text-sm lg:text-base drop-shadow-[0_0_4px_#2f46fa] font-jetbrains"
+            className="text-sm lg:text-base drop-shadow-[0_0_4px_#2f46fa] font-tektur"
           >
             Passionate about{" "}
-            <span className="px-0.5 bg-gradient-to-r from-neon-green via-neon-cyan to-neon-pink bg-clip-text text-transparent drop-shadow-[0_0_2px_#2f46fa]">
+            <span className="px-0.5 bg-gradient-to-r from-neon-green via-neon-cyan to-neon-pink bg-clip-text text-transparent drop-shadow-[0_0_1px_#2f46fa]">
               coding
             </span>
             ,{" "}
-            <span className="px-0.5 bg-gradient-to-r to-neon-cyan from-neon-pink font-bold bg-clip-text text-transparent drop-shadow-[0_0_2px_#2f46fa]">
+            <span className="px-0.5 bg-gradient-to-r to-neon-cyan from-neon-pink bg-clip-text text-transparent drop-shadow-[0_0_1px_#2f46fa]">
               web design
             </span>{" "}
-            and development, with a keen interest in{" "}
-            <span className="bg-gradient-to-r from-neon-pink to-neon-pink via-neon-cyan bg-clip-text text-transparent drop-shadow-[0_0_2px_#2f46fa]">
+            and{" "}
+            <span className="px-0.5 bg-gradient-to-r to-neon-cyan from-neon-pink bg-clip-text text-transparent drop-shadow-[0_0_1px_#2f46fa]">
+              development
+            </span>
+            , with a keen interest in{" "}
+            <span className="bg-gradient-to-r from-neon-pink to-neon-pink via-neon-cyan bg-clip-text text-transparent drop-shadow-[0_0_1px_#2f46fa]">
               cycling
             </span>
             .

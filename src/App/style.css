@@ -1,0 +1,40 @@
+.box {
+  /* Keep the --main-bg but make it transparent */
+  --main-bg: conic-gradient(
+    from var(--border-angle),
+    #020618,
+    #020618 5%,
+    #020618 60%,
+    #020618 95%
+  );
+  border: solid 2px rgb(24, 35, 61);
+  --gradient-border: conic-gradient(
+    from var(--border-angle),
+    transparent 25%,
+    #fb41da,
+    #2f46fa 99%,
+    #7e2de8
+  );
+  background: var(--main-bg) padding-box, var(--gradient-border) border-box,
+    var(--main-bg) border-box;
+  background-position: center center;
+  animation: bg-spin 3s linear infinite paused;
+}
+@keyframes bg-spin {
+  to {
+    --border-angle: 1turn;
+  }
+}
+.box:hover {
+  transition: all 0.15s;
+  border: solid 2px transparent;
+  background: var(--main-bg) padding-box, var(--gradient-border) border-box,
+    var(--main-bg) border-box;
+  background-position: center center;
+  animation: bg-spin 3s linear infinite;
+}
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0turn;
+}

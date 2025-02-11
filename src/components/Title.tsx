@@ -13,14 +13,8 @@ const slideFromLeft = {
 };
 
 const Title: React.FC<TitleProps> = ({ title }) => {
-  // Create a ref (though not needed for visibility tracking here)
-  const ref = useRef<HTMLDivElement>(null);
-
   return (
-    <div
-      ref={ref}
-      className="flex z-10 w-[80%] flex-col  px-2 py-2 justify-start gap-5 font-semibold text-slate-300"
-    >
+    <div className="flex z-10 w-[80%] flex-col  px-2 py-2 justify-start gap-5 font-semibold text-slate-300">
       {/* Title text with animation */}
       <motion.div
         className="text-xl text-center font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-[#fb41da] via-[#2f46fa] to-[#fb41da] drop-shadow-[0_0_1px_#2f46fa] flex gap-2 sm:text-xl md:text-2xl lg:text-3xl"
