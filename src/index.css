@@ -35,6 +35,9 @@
   scrollbar-color: #4f46e5#000319;
 }
 
+img {
+  pointer-events: none;
+}
 /* 3d laptop */
 
 .content {

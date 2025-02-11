@@ -64,13 +64,6 @@ function Landing() {
       {/* Content overlay */}
       <div className="absolute p-3 z-50 flex flex-col items-center justify-center">
         <motion.div
-          {...motionProps.hello}
-          className="text-base text-sky-400 drop-shadow-[0_0_2px_#7e2de8] font-medium font-tektur tracking-widest mb-2 md:text-lg lg:text-xl"
-        >
-          Hello! I&apos;m John Adrian
-        </motion.div>
-
-        <motion.div
           {...motionProps.passionate}
           className="text-lg sm:text-xl md:text-2xl font-tektur tracking-widest lg:text-2xl flex flex-col text-sky-400 drop-shadow-[0_0_2px_#7e2de8] font-medium items-center lg:items-stretch"
         >

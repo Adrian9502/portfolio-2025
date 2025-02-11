@@ -7,7 +7,7 @@
     #020618 60%,
     #020618 95%
   );
-  border: solid 2px rgb(24, 35, 61);
+  border: solid 2px rgb(32, 45, 77);
   --gradient-border: conic-gradient(
     from var(--border-angle),
     transparent 25%,

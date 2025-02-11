@@ -26,9 +26,9 @@ function About() {
       <Title title={"Discover more about my passions and interests."} />
 
       {/* Name and 3d laptop */}
-      <div className="flex h-full w-full flex-col z-10 2xl:flex-row pointer-events-none items-center gap-2 justify-around mt-10">
+      <div className="flex w-full sm:w-[80%] flex-col z-10 2xl:flex-row pointer-events-none items-center gap-2 justify-around mt-10">
         {/* Left: Text Section */}
-        <div className="p-10 z-50 w-full text-center text-base sm:text-base md:text-lg lg:text-xl text-slate-200 flex-1">
+        <div className="p-10 z-50 text-center text-base sm:text-base md:text-lg lg:text-xl  flex-1">
           {/* Animate the name */}
           <motion.div
             ref={nameRef}
@@ -36,14 +36,14 @@ function About() {
             animate="visible"
             variants={fadeInUp}
             transition={{ duration: 0.8, delay: 0.2 }} // Delay for the name
+            className="flex items-end mb-4"
           >
-            <span className="drop-shadow-[0_0_3px_#2f46fa] font-tektur">
-              Hello! My name is
+            <span className="font-poppins text-slate-200 text-sm md:text-lg">
+              Hello! 👋 I'm
             </span>{" "}
-            <br />
             <span
               data-text="nhoJ nairdA otnoB"
-              className="overflow-hidden hero glitch layers bg-gradient-to-r from-neon-blue to-neon-blue via-neon-cyan bg-clip-text text-transparent drop-shadow-[0_0_4px_#2f46fa] tracking-widest font-orbitron text-3xl sm:text-4xl lg:text-6xl font-bold"
+              className="ml-2 overflow-hidden hero glitch layers text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan via-neon-purple to-neon-pink font-poppins text-2xl lg:text-4xl font-medium"
             >
               John Adrian Bonto
             </span>
@@ -56,25 +56,31 @@ function About() {
             animate="visible"
             variants={fadeInUp}
             transition={{ duration: 0.8, delay: 0.4 }} // Delay for the description
-            className="text-sm lg:text-base drop-shadow-[0_0_4px_#2f46fa] font-tektur"
+            className="text-xs md:text-sm font-poppins text-gray-400 text-start"
           >
-            Passionate about{" "}
-            <span className="px-0.5 bg-gradient-to-r from-neon-green via-neon-cyan to-neon-pink bg-clip-text text-transparent drop-shadow-[0_0_1px_#2f46fa]">
-              coding
+            I started coding in{" "}
+            <span className="font-bold text-gray-300">2023</span> and have been
+            building personal projects to enhance my skills. Now, I focus on{" "}
+            <span className="font-bold text-gray-300">React.js</span>,{" "}
+            <span className="font-bold text-gray-300 ">Tailwind CSS</span>, and
+            the <span className="font-bold text-gray-300">MERN stack</span>,
+            creating both small and full-stack applications.
+            <br /> <br />
+            With <span className="font-bold text-gray-300">20+</span> projects
+            on GitHub, I’m always learning and working towards my goal of
+            becoming a{" "}
+            <span className="font-bold text-gray-300">Software Engineer</span>.
+            <br /> <br />
+            Outside of coding, I enjoy{" "}
+            <span className="font-bold text-gray-300">cycling</span> with
+            friends and playing{" "}
+            <span className="font-bold text-gray-300">Mir4</span>, an MMORPG
+            automation game, balancing both hobbies as I grind in coding!
+            <br /> <br />
+            <span className="text-gray-200">My favorite motto is</span>{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-pink via-neon-cyan to-neon-pink">
+              "Whether you do it or not, time will pass anyway."
             </span>
-            ,{" "}
-            <span className="px-0.5 bg-gradient-to-r to-neon-cyan from-neon-pink bg-clip-text text-transparent drop-shadow-[0_0_1px_#2f46fa]">
-              web design
-            </span>{" "}
-            and{" "}
-            <span className="px-0.5 bg-gradient-to-r to-neon-cyan from-neon-pink bg-clip-text text-transparent drop-shadow-[0_0_1px_#2f46fa]">
-              development
-            </span>
-            , with a keen interest in{" "}
-            <span className="bg-gradient-to-r from-neon-pink to-neon-pink via-neon-cyan bg-clip-text text-transparent drop-shadow-[0_0_1px_#2f46fa]">
-              cycling
-            </span>
-            .
           </motion.div>
         </div>
         {/* Right : 3D Monitor */}

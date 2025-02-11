@@ -3,7 +3,6 @@ import { skillsData } from "../utils/skills";
 import * as motion from "motion/react-client";
 import { useInView } from "motion/react";
 import SkillsCard from "../components/SkillsCard";
-import "./style.css";
 export default function Skills() {
   // Create refs for in-view detection
   const primarySkillsRef = useRef(null);
@@ -39,7 +38,7 @@ export default function Skills() {
               src="/logo.png"
               className="w-10 h-10 drop-shadow-[0_0_1px_#7e2de8]"
             />
-            These are the skills I&apos;ve gained in my web development journey.
+            These are the skills I've gained throughout my development journey.
           </motion.div>
           {/* line */}
           <div className="flex justify-start items-center w-full">
@@ -52,8 +51,11 @@ export default function Skills() {
       {/* Skills section */}
       <div
         ref={primarySkillsRef}
-        className="flex justify-center w-[80%] items-center gap-8 p-4"
+        className="flex justify-center w-[80%] border relative border-white items-center gap-8 p-4"
       >
+        {/* bg glow */}
+        <div className="absolute left-2 lg:left-24 top-0 lg:top-36 transform rounded-full border-[100px] border-b-neon-pink border-l-neon-blue border-r-neon-purple border-t-neon-cyan blur-[240px]" />
+        <div className="absolute right-2 lg:right-24 bottom-0 lg:bottom-1/2  transform rounded-full border-[100px] border-b-neon-pink border-l-neon-blue border-r-neon-purple border-t-neon-cyan blur-[240px]" />
         {/* Primary Skills with animation */}
         <motion.div
           initial="hidden"
