@@ -58,40 +58,42 @@ export default function Code() {
     { text: "aboutMe ", color: "text-gray-300" },
     { text: "= ", color: "text-orange-500" },
     { text: "{\n", color: "text-green-400" },
-    { text: indent(4) + "role: ", color: "text-sky-400" },
-    { text: `"Web Developer",\n`, color: "text-green-400" },
+    { text: indent(4) + "fullName: ", color: "text-sky-400" },
+    { text: `"John Adrian Dimaano Bonto",\n`, color: "text-green-400" },
+    { text: indent(4) + "personality: ", color: "text-sky-400" },
+    {
+      text: `"Reliable, Adaptable, Helpful, Honest,\n`,
+      color: "text-green-400",
+    },
+    {
+      text: indent(4) + ` Humble, Appreciative, Adventurous",\n`,
+      color: "text-green-400",
+    },
+    { text: indent(4) + "goal: ", color: "text-sky-400" },
+    { text: `"Software Engineer",\n`, color: "text-green-400" },
     { text: indent(4) + "hobbies: ", color: "text-sky-400" },
-    { text: `"Cycling, Coding",\n`, color: "text-green-400" },
-    { text: indent(4) + "passion: ", color: "text-sky-400" },
+    { text: `"Cycling, Coding, Playing MIR4",\n`, color: "text-green-400" },
+    { text: indent(4) + "education: ", color: "text-sky-400" },
     {
-      text: `"I'm a web developer with a degree in \n`,
+      text: `"Bachelor's Degree in Computer Science", \n`,
+      color: "text-green-400",
+    },
+    { text: indent(4) + "workExperience: {\n", color: "text-sky-400" },
+
+    {
+      text: indent(6) + `company: "Red Ribbon Bakeshop",\n`,
       color: "text-green-400",
     },
     {
-      text: indent(6) + "Computer Science, focused on building intuitive,\n",
+      text: indent(6) + `position: "Production Crew",\n`,
       color: "text-green-400",
     },
     {
-      text: indent(6) + "responsive web applications. Outside of coding,\n",
+      text: indent(6) + `year: "2021-2023" \n`,
       color: "text-green-400",
     },
-    {
-      text: indent(6) + "I love cycling and exploring, which fuel my \n",
-      color: "text-green-400",
-    },
-    {
-      text: indent(6) + "creativity and help with problem-solving. \n",
-      color: "text-green-400",
-    },
-    {
-      text: indent(6) + "I'm passionate about working on meaningful\n",
-      color: "text-green-400",
-    },
-    {
-      text: indent(6) + "projects and am always eager to learn new \n",
-      color: "text-green-400",
-    },
-    { text: indent(6) + "skills.\n", color: "text-green-400" },
+
+    { text: "}", color: "text-green-400" },
     { text: "};", color: "text-green-400" },
   ];
 

@@ -77,9 +77,8 @@ function About() {
             <span className="font-bold text-gray-300">Mir4</span>, an MMORPG
             automation game, balancing both hobbies as I grind in coding!
             <br /> <br />
-            <span className="text-gray-200">My favorite motto is</span>{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-pink via-neon-cyan to-neon-pink">
-              "Whether you do it or not, time will pass anyway."
+            <span className="text-transparent bg-clip-text bg-gradient-to-r font-bold from-neon-pink via-neon-cyan to-neon-pink">
+              "When the time is right, the Lord will make it happen."
             </span>
           </motion.div>
         </div>

@@ -1,6 +1,7 @@
 import * as THREE from "three";
 import React, { Suspense, useRef, useEffect, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
+import "../../styles/laptop.css";
 import {
   Html,
   Environment,
@@ -130,7 +131,7 @@ const Laptop = () => {
       : { position: [-3, 6, 12], fov: 65 };
 
   return (
-    <Canvas camera={cameraSettings}>
+    <Canvas className="cursor-grab" camera={cameraSettings}>
       <pointLight position={[10, 10, 10]} intensity={1.5} />
       <Suspense fallback={null}>
         <group rotation={[0, 0, 0]} position={[0, 0, 0]}>

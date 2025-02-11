@@ -51,7 +51,7 @@ export default function Skills() {
       {/* Skills section */}
       <div
         ref={primarySkillsRef}
-        className="flex justify-center w-[80%] border relative border-white items-center gap-8 p-4"
+        className="flex justify-center w-[80%] relative items-center gap-8 p-4"
       >
         {/* bg glow */}
         <div className="absolute left-2 lg:left-24 top-0 lg:top-36 transform rounded-full border-[100px] border-b-neon-pink border-l-neon-blue border-r-neon-purple border-t-neon-cyan blur-[240px]" />
