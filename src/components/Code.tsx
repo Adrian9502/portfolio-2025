@@ -78,7 +78,8 @@ export default function Code() {
       text: `"Bachelor's Degree in Computer Science", \n`,
       color: "text-green-400",
     },
-    { text: indent(4) + "workExperience: {\n", color: "text-sky-400" },
+    { text: indent(4) + "workExperience:", color: "text-sky-400" },
+    { text: indent(4) + "{\n", color: "text-green-400" },
 
     {
       text: indent(6) + `company: "Red Ribbon Bakeshop",\n`,
