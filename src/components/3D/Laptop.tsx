@@ -9,8 +9,6 @@ import {
   OrbitControls,
 } from "@react-three/drei";
 import Code from "../Code";
-import { Group, Mesh, Object3DEventMap } from "three";
-
 interface GLTFResult {
   nodes: {
     [key: string]: THREE.Mesh;
