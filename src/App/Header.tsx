@@ -1,11 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import { animate } from "motion";
-import { CodeXml } from "lucide-react";
 import "../styles/header.css";
 import SocialIcons from "../components/SocialIcons";
 import socialLinks from "../utils/socialLinks";
 import navLinks from "../utils/navLinks";
-import logo from "/logo.png";
 
 interface SocialLink {
   Icon: React.ElementType;
@@ -98,7 +96,7 @@ function Header() {
             className="px-3 transition-all duration-300 border-r-2 border-slate-900"
           >
             <img
-              src={logo}
+              src="/logo.png"
               alt="coding logo"
               className="w-10 h-10 drop-shadow-[0_0_3px_#2f46fa]"
             />
@@ -140,8 +138,28 @@ function Header() {
         {isOpen && (
           <div
             ref={mobileMenuRef}
-            className="absolute top-0 left-0 w-full bg-black/70 backdrop-blur-sm rounded-2xl md:hidden"
+            className="absolute top-0 left-0 w-full bg-slate-950/30 backdrop-blur-sm rounded-2xl md:hidden"
           >
+            {/* Social icons */}
+            <div className="px-1 mt-3 flex items-center gap-3 justify-center transition-all duration-300">
+              <a href="/" className="px-3 transition-all duration-300">
+                <img
+                  src="/logo.png"
+                  alt="coding logo"
+                  className="w-7 h-7 drop-shadow-[0_0_3px_#2f46fa]"
+                />
+              </a>
+              {socialLinks.map(({ Icon, link, label }: SocialLink) => (
+                <SocialIcons
+                  styles="hover:bg-blue-800/70 bg-blue-700/20 rounded-sm"
+                  iconColor="text-neon-cyan"
+                  key={label}
+                  Icon={Icon}
+                  link={link}
+                  label={label}
+                />
+              ))}
+            </div>
             <div className="flex flex-col items-center p-4">
               {navLinks.map(({ href, label }, index) => (
                 <a
@@ -154,19 +172,6 @@ function Header() {
                 >
                   {label}
                 </a>
-              ))}
-            </div>
-            {/* GitHub Button */}
-            <div className="px-1 flex pb-2 items-center gap-4 justify-center transition-all duration-300">
-              {socialLinks.map(({ Icon, link, label }: SocialLink) => (
-                <SocialIcons
-                  styles="hover:bg-slate-700/70 bg-slate-800/80 rounded-lg"
-                  iconColor="text-gray-100"
-                  key={label}
-                  Icon={Icon}
-                  link={link}
-                  label={label}
-                />
               ))}
             </div>
           </div>
