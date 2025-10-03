@@ -56,16 +56,16 @@ function Header() {
   return (
     <header className="fixed z-50 top-0 right-2 left-2">
       <div
-        className={`px-3 py-2 z-50  flex items-center justify-start md:justify-center uppercase rounded-xl ${
+        className={`px-3 py-2 z-50  flex items-center justify-start lg:justify-center uppercase rounded-xl ${
           isOpen ? "border-slate-700 " : "border-slate-700"
         } transition-colors duration-200 font-semibold`}
       >
         {/* Hamburger Button */}
         <button
-          className={`md:hidden rounded-lg  border transition duration-200 z-50 p-3 ${
+          className={`lg:hidden rounded-lg  border transition duration-200 z-50 p-3 ${
             isOpen
               ? "bg-transparent border-transparent"
-              : "bg-dark border-slate-700"
+              : "bg-slate-950 border-slate-700"
           }`}
           onClick={() => setIsOpen(!isOpen)}
         >
@@ -89,7 +89,7 @@ function Header() {
         </button>
 
         {/* Desktop Navigation */}
-        <div className="hidden z-50 p-2 uppercase rounded-2xl bg-slate-950/80 backdrop-blur-xs border-trail md:flex md:justify-center items-center justify-center space-x-6">
+        <div className="hidden z-50 p-2 uppercase rounded-2xl bg-slate-950/80 backdrop-blur-xs border-trail lg:flex md:justify-center items-center justify-center space-x-6">
           {/* Logo */}
           <a
             href="/"
@@ -134,7 +134,7 @@ function Header() {
         {isOpen && (
           <div
             ref={mobileMenuRef}
-            className="absolute top-0 left-0 w-full bg-slate-950/30 backdrop-blur-sm rounded-2xl md:hidden"
+            className="absolute top-0 left-0 w-full bg-slate-950/30 backdrop-blur-sm rounded-2xl lg:hidden"
           >
             {/* Social icons */}
             <div className="px-1 mt-3 flex items-center gap-3 justify-center transition-all duration-300">
