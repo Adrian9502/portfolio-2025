@@ -49,54 +49,54 @@ function Landing() {
 
   return (
     <main
-      className="relative z-10 min-h-screen w-full flex items-center justify-center overflow-hidden shadow-lg before:z-50 before:absolute before:inset-x-0 before:bottom-0 before:h-40 before:bg-gradient-to-t 
-              before:from-slate-950 before:to-transparent 
-              after:z-30 after:absolute after:inset-x-0 after:top-0 after:h-[90%] after:bg-gradient-to-b 
-              after:from-slate-950 after:via-stone-950/50 after:to-transparent"
-      style={{ backgroundImage: 'url("https://i.imgur.com/YvUPGUK.jpg")' }}
+      className="relative z-10 min-h-screen w-full flex items-center justify-center overflow-hidden shadow-lg before:z-50 "
+      // style={{ backgroundImage: 'url("https://i.imgur.com/YvUPGUK.jpg")' }}
     >
-      {/* animated grid */}
-      <div className="grid absolute left-0 right-0 top-0 bottom-0">
-        <div className="grid-fade"></div>
-        <div className="grid-lines"></div>
-      </div>
+      {/* gradient glow */}
+      <div className="absolute left-2 lg:left-24 top-0 lg:top-20 -translate-x-1/2 transform rounded-full border-[150px] border-b-neon-purple/40 border-l-neon-blue/40 border-r-neon-purple/40 border-t-neon-cyan/60 blur-[200px]" />
+
+      <div className="absolute right-2 lg:top-20 lg:-translate-x-32  transform rounded-full border-[200px] xl:border-[150px] xl:border-b-neon-purple/40 xl:border-l-neon-blue/40 xl:border-r-neon-purple/40 xl:border-t-neon-cyan/40 blur-[200px]" />
 
       {/* Content overlay */}
       <div className="absolute p-3 z-50 flex flex-col items-center justify-center">
         <motion.div
           {...motionProps.passionate}
-          className="text-lg sm:text-xl md:text-2xl font-tektur tracking-widest lg:text-2xl flex flex-col text-sky-400 drop-shadow-[0_0_2px_#7e2de8] font-medium items-center lg:items-stretch"
+          className="text-lg sm:text-xl md:text-2xl font-tektur tracking-widest lg:text-2xl flex flex-col text-slate-100 font-medium items-center lg:items-stretch drop-shadow-[0_0_1px_#242424]"
         >
-          A passionate
+          {/* A passionate */}Aspiring
         </motion.div>
 
         <motion.div
           {...motionProps.webDev}
-          className="text-center lg:py-3 text-4xl font-tektur tracking-widest drop-shadow-[0_0_5px_#2f46fa] text-neon-cyan sm:text-6xl md:text-7xl lg:text-[90px] font-bold"
+          className="text-center lg:py-3 text-4xl font-tektur tracking-widest text-neon-cyan sm:text-6xl drop-shadow-[0_0_5px_#7e2de8] md:text-5xl lg:text-[90px] font-bold"
         >
-          Web Developer
+          Software Engineer
+          {/* Web Developer */}
         </motion.div>
 
         <motion.div
           {...motionProps.specializing}
-          className="text-lg font-medium sm:text-xl md:text-2xl font-tektur tracking-widest lg:text-2xl flex flex-col text-sky-400 drop-shadow-[0_0_2px_#7e2de8] items-center lg:items-stretch"
+          className="text-lg font-medium sm:text-xl md:text-2xl font-tektur tracking-widest lg:text-2xl flex flex-col text-slate-100 items-center lg:items-stretch drop-shadow-[0_0_1px_#242424]"
         >
           specializing in
         </motion.div>
 
         <motion.div
           {...motionProps.frontEnd}
-          className="text-neon-cyan py-2 font-tektur tracking-widest lg:py-3 text-4xl sm:text-6xl md:text-7xl drop-shadow-[0_0_5px_#2f46fa] lg:text-[90px] font-bold text-center"
+          className="text-neon-cyan py-2 font-tektur tracking-widest lg:py-3 text-4xl sm:text-6xl md:text-5xl lg:text-[90px] font-bold text-center drop-shadow-[0_0_5px_#7e2de8]"
         >
           Front-End Development
+          {/* Front-End Development */}
         </motion.div>
 
         <motion.div
           {...motionProps.creating}
-          className="text-sm font-tektur text-sky-400 font-medium tracking-widest sm:text-base md:text-lg drop-shadow-[0_0_2px_#7e2de8] lg:text-xl text-center"
+          className="text-sm font-tektur text-slate-100 font-medium tracking-widest sm:text-base md:text-lg lg:text-xl text-center drop-shadow-[0_0_1px_#242424]"
         >
-          Creating engaging, responsive, and user-friendly websites with modern
-          technologies
+          {/* Creating engaging, responsive, and user-friendly websites with modern
+          technologies */}
+          Building robust, high-quality applications with a disciplined approach
+          to code and teamwork.
         </motion.div>
 
         <motion.div
@@ -105,7 +105,7 @@ function Landing() {
         >
           {socialLinks.map(({ Icon, link, label }: SocialLink) => (
             <SocialIcons
-              styles="hover:bg-slate-950/50 bg-blue-600/20 border-2 border-neon-purple/50 hover:bg-purple-950/50 rounded-lg drop-shadow-[0_0_5px_#7e2de8] hover:drop-shadow-[0_0_8px_#7e2de8]"
+              styles="hover:bg-slate-800 border border-neon-purple/50  rounded-lg"
               iconColor="text-neon-cyan"
               key={label}
               Icon={Icon}
@@ -115,13 +115,6 @@ function Landing() {
           ))}
         </motion.div>
       </div>
-
-      {/* Color overlays */}
-      <div className="absolute z-20 -right-[10vw] top-[10vh] rounded-full border-[500px] border-b-neon-purple/70 border-l-rose-600/70 border-r-neon-blue/70 border-t-neon-pink/40 blur-[200px]" />
-      <div className="absolute z-20 -left-[10vw] top-[10vh] rounded-full border-[500px] border-b-neon-purple/70 border-l-rose-600/70 border-r-neon-blue/70 border-t-neon-pink-400/70 blur-[200px]" />
-      {/* -- black */}
-      <div className="absolute z-30 -right-[10vw] -bottom-[25vh] rounded-full border-[250px] border-black blur-[200px]" />
-      <div className="absolute z-30 -left-[10vw] -bottom-[25vh] rounded-full border-[250px] border-black blur-[200px]" />
     </main>
   );
 }

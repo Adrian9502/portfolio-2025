@@ -59,27 +59,34 @@ export default function Code() {
     { text: "= ", color: "text-orange-500" },
     { text: "{\n", color: "text-green-400" },
     { text: indent(4) + "fullName: ", color: "text-sky-400" },
-    { text: `"John Adrian Dimaano Bonto",\n`, color: "text-green-400" },
-    { text: indent(4) + "personality: ", color: "text-sky-400" },
+    { text: `"John Adrian Bonto",\n`, color: "text-green-400" },
+    { text: indent(4) + "techStack: ", color: "text-sky-400" },
     {
-      text: `"Reliable, Adaptable, Helpful, Honest,\n`,
+      text: `"["React.js","React Native", \n`,
       color: "text-green-400",
     },
     {
-      text: indent(4) + ` Humble, Appreciative, Adventurous",\n`,
+      text: indent(15) + ` "Tailwind CSS", "MERN Stack"],\n`,
       color: "text-green-400",
     },
-    { text: indent(4) + "goal: ", color: "text-sky-400" },
+    { text: indent(4) + "role: ", color: "text-sky-400" },
     { text: `"Software Engineer",\n`, color: "text-green-400" },
-    { text: indent(4) + "hobbies: ", color: "text-sky-400" },
-    { text: `"Cycling, Coding, Playing MIR4",\n`, color: "text-green-400" },
+    { text: indent(4) + "projects: ", color: "text-sky-400" },
+    {
+      text: `"20+ public repositories on GitHub & ,\n`,
+      color: "text-green-400",
+    },
+    {
+      text: indent(14) + `portfolio",\n`,
+      color: "text-green-400",
+    },
     { text: indent(4) + "education: ", color: "text-sky-400" },
     {
       text: `"Bachelor's Degree in Computer Science", \n`,
       color: "text-green-400",
     },
     { text: indent(4) + "workExperience:", color: "text-sky-400" },
-    { text: indent(4) + "{\n", color: "text-green-400" },
+    { text: indent(0) + "{\n", color: "text-green-400" },
 
     {
       text: indent(6) + `company: "Red Ribbon Bakeshop",\n`,
@@ -93,7 +100,6 @@ export default function Code() {
       text: indent(6) + `year: "2021-2023" \n`,
       color: "text-green-400",
     },
-
     { text: "}", color: "text-green-400" },
     { text: "};", color: "text-green-400" },
   ];

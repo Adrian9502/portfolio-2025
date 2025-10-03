@@ -6,10 +6,10 @@ import Skills from "./App/Skills";
 import StarryBackground from "./components/StarryBackground";
 function App() {
   return (
-    <main className="bg-texture bg-slate-950">
-      <Header />
-      <Landing />
+    <main className="bg-dark">
       <StarryBackground>
+        <Header />
+        <Landing />
         <About />
         <Skills />
       </StarryBackground>

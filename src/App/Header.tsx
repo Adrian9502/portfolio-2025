@@ -95,11 +95,7 @@ function Header() {
             href="/"
             className="px-3 transition-all duration-300 border-r-2 border-slate-900"
           >
-            <img
-              src="/logo.png"
-              alt="coding logo"
-              className="w-10 h-10 drop-shadow-[0_0_3px_#2f46fa]"
-            />
+            <img src="/logo.png" alt="coding logo" className="w-12 h-12" />
           </a>
 
           {/* Navigation Links */}
