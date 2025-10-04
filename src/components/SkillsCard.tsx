@@ -1,5 +1,7 @@
 import React from "react";
 import "../styles/skillcard.css";
+import Card from "./Card";
+
 interface SkillCardProps {
   icon: string;
   title: string;
@@ -8,9 +10,9 @@ interface SkillCardProps {
 
 const SkillsCard: React.FC<SkillCardProps> = ({ icon, title, description }) => {
   return (
-    <div className="border-2 box p-4 md:p-5 rounded-lg">
+    <Card>
       <div
-        className="sm:w-13 sm:h-13 w-10 h-10 mb-2 bg-slate-600 border border-slate-800 rounded-full p-2 "
+        className="sm:w-13 sm:h-13 w-10 h-10 mb-2 bg-slate-600 border border-slate-800 rounded-full p-2"
         dangerouslySetInnerHTML={{ __html: icon }}
       />
       {/* text and description */}
@@ -24,7 +26,7 @@ const SkillsCard: React.FC<SkillCardProps> = ({ icon, title, description }) => {
           <p>{description}</p>
         </div>
       </div>
-    </div>
+    </Card>
   );
 };
 
