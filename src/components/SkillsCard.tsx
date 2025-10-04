@@ -16,7 +16,7 @@ const SkillsCard: React.FC<SkillCardProps> = ({ icon, title, description }) => {
       {/* text and description */}
       <div className="flex flex-col gap-1 sm:gap-2">
         <div>
-          <h3 className="text-sm sm:text-base bg-gradient-to-r from-neon-purple via-neon-purple to-neon-purple bg-clip-text text-transparent font-tektur  font-medium tracking-widest">
+          <h3 className="text-sm sm:text-base bg-gradient-to-r from-neon-cyan via-neon-purple  to-neon-purple bg-clip-text text-transparent font-tektur font-medium tracking-widest ">
             {title}
           </h3>
         </div>
