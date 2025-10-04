@@ -73,11 +73,11 @@ export default function Code() {
     { text: `"Software Engineer",\n`, color: "text-green-400" },
     { text: indent(4) + "projects: ", color: "text-sky-400" },
     {
-      text: `"20+ public repositories on GitHub & ,\n`,
+      text: `"20+ public repositories on GitHub &\n`,
       color: "text-green-400",
     },
     {
-      text: indent(14) + `portfolio",\n`,
+      text: indent(15) + `portfolio",\n`,
       color: "text-green-400",
     },
     { text: indent(4) + "education: ", color: "text-sky-400" },

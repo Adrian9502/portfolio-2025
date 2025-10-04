@@ -39,7 +39,7 @@ function About() {
             </span>{" "}
             <span
               data-text="nhoJ nairdA otnoB"
-              className="ml-2 overflow-hidden hero glitch layers text-transparent bg-clip-text bg-gradient-to-r from-neon-purple to-neon-cyan  font-poppins text-2xl lg:text-3xl font-semibold"
+              className="ml-2 overflow-hidden hero glitch layers text-transparent bg-clip-text bg-gradient-to-r to-neon-purple from-neon-cyan  font-poppins text-2xl lg:text-3xl font-semibold"
             >
               John Adrian Bonto
             </span>
@@ -54,7 +54,7 @@ function About() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-md md:text-lg font-poppins text-slate-400 text-start"
           >
-            an{" "}
+            An{" "}
             <span className="font-bold text-slate-300">
               Aspiring Software Engineer
             </span>{" "}
@@ -64,7 +64,7 @@ function About() {
             the <span className="font-bold text-slate-300">MERN stack</span>.
             <br /> <br />
             I’ve built a wide range of projects — from practice apps and UI
-            clones to full-stack applications and academic capstone projects. My{" "}
+            clones to full-stack applications and academic thesis projects. My{" "}
             <a
               href="https://github.com/Adrian9502?tab=repositories"
               target="_blank"
