@@ -36,7 +36,10 @@ const Contact: React.FC = () => {
   ];
 
   return (
-    <section id="Contact" className="py-10 sm:p-14">
+    <section
+      id="Contact"
+      className="p-2 mt-10 py-10 flex-col gap-8 overflow-hidden flex items-center justify-center sm:p-14 mb-32 "
+    >
       <Title title="Let's connect and discuss potential opportunities." />
 
       <div className="w-[80%] mx-auto grid gap-8 lg:grid-cols-2">

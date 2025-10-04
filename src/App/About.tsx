@@ -15,7 +15,7 @@ function About() {
   const descriptionRef = React.useRef(null);
 
   return (
-    <main
+    <section
       id="About"
       className="flex shadow-lg items-center flex-col sm:p-14 py-10 "
     >
@@ -94,7 +94,7 @@ function About() {
 
         <Code />
       </div>
-    </main>
+    </section>
   );
 }
 

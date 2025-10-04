@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Title from "../components/Title";
 import ProjectCard from "../components/ProjectCard";
 import { projectsData } from "../utils/projects.data";
+import ProjectsCard from "../components/ProjectsCard";
 
 const Projects: React.FC = () => {
   const [filter, setFilter] = useState<"all" | "web" | "mobile" | "fullstack">(
@@ -21,8 +22,13 @@ const Projects: React.FC = () => {
   ];
 
   return (
-    <section id="Projects" className="py-10 sm:p-14">
+    <section
+      id="Projects"
+      className="p-2 mt-10 py-10 flex-col gap-8 overflow-hidden flex items-center justify-center sm:p-14 mb-32 "
+    >
       <Title title="Check out my latest projects and creative work." />
+
+      <ProjectsCard />
 
       {/* Filter Buttons */}
       <div className="flex flex-wrap justify-center gap-4 mb-8 w-[80%] mx-auto">

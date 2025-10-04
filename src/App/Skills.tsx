@@ -15,7 +15,7 @@ export default function Skills() {
     visible: { opacity: 1, y: 0 },
   };
   return (
-    <div
+    <section
       id="Skills"
       className="p-2 mt-10 py-10 flex-col gap-8 overflow-hidden flex items-center justify-center sm:p-14 mb-32 "
     >
@@ -44,6 +44,6 @@ export default function Skills() {
           ))}
         </motion.div>
       </div>
-    </div>
+    </section>
   );
 }
