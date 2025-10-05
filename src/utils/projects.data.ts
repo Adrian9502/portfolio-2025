@@ -8,12 +8,35 @@ export interface Project {
   githubUrl: string;
   imageUrl: string;
   featured: boolean;
-  category: "web" | "mobile" | "fullstack";
+  category: "web" | "mobile" | "fullstack" | "Frontend" | "Backend";
 }
 
 export const projectsData: Project[] = [
   {
     id: "1",
+    title: "WikaTalk – Filipino Dialect Interpreter",
+    description:
+      "A feature-rich thesis project: a mobile app for translating and learning 10 Filipino dialects, built with React Native and Express.js. It combines NLP-powered translation, OCR text scanning, pronunciation guides, and gamified learning with coins, hints, and progress tracking for an engaging language experience.",
+    technologies: [
+      "React Native (Expo)",
+      "TypeScript",
+      "Express.js",
+      "MongoDB",
+      "Zustand",
+      "OCR",
+      "NLP",
+    ],
+    liveUrl: "https://wikatalk.vercel.app/",
+    githubUrl:
+      "https://github.com/Adrian9502/wikatalk-thesis-speech-interpreter",
+    imageUrl:
+      "https://github.com/Adrian9502/wikatalk-thesis-speech-interpreter/raw/main/web-ui.png",
+    featured: true,
+    category: "mobile",
+  },
+
+  {
+    id: "2",
     title: "WeLearn – Web-Based Sorting Algorithms and Binary Operation Game",
     description:
       "An interactive MERN stack quiz platform designed to help students and enthusiasts learn sorting algorithms and binary operations through engaging, structured quizzes. Built as a Software Engineering 2 project.",
@@ -26,7 +49,7 @@ export const projectsData: Project[] = [
     category: "fullstack",
   },
   {
-    id: "2",
+    id: "3",
     title: "Arise – Game Review Website",
     description:
       "A web project developed as a first college website assignment, showcasing basic front-end structure and design concepts learned during the second year.",
@@ -39,7 +62,7 @@ export const projectsData: Project[] = [
     category: "web",
   },
   {
-    id: "3",
+    id: "4",
     title: "QuickBuy – E-Commerce Website",
     description:
       "An e-commerce platform built with React, Tailwind CSS, and Redux that allows users to browse products, view details, and manage their carts. It features product categories, search functionality, and a responsive design.",
@@ -52,7 +75,7 @@ export const projectsData: Project[] = [
     category: "web",
   },
   {
-    id: "4",
+    id: "5",
     title: "MERN – Advanced Authentication System",
     description:
       "An authentication system built with the MERN stack and Tailwind CSS, supporting user registration, email verification, and password recovery.",
@@ -65,7 +88,7 @@ export const projectsData: Project[] = [
     category: "fullstack",
   },
   {
-    id: "5",
+    id: "6",
     title: "Datkilab – Reverse Your Words",
     description:
       "A fun web app that reverses any text input, letting users playfully confuse their friends and group chats.",
@@ -78,7 +101,7 @@ export const projectsData: Project[] = [
     category: "web",
   },
   {
-    id: "6",
+    id: "7",
     title: "MERN Blog App",
     description:
       "A basic CRUD blog application built with the MERN stack, allowing users to create, read, update, and delete posts.",
@@ -91,7 +114,7 @@ export const projectsData: Project[] = [
     category: "fullstack",
   },
   {
-    id: "7",
+    id: "8",
     title: "BakeMart – Café and Bakery Website",
     description:
       "A front-end website UI for a café and bakery, built with React and Tailwind CSS as part of a Graphic Design subject.",
@@ -104,7 +127,7 @@ export const projectsData: Project[] = [
     category: "web",
   },
   {
-    id: "8",
+    id: "9",
     title: "YouTube Clone (React)",
     description:
       "A YouTube-like app built with React and Tailwind CSS that lets users search, browse, and watch videos using a public API.",
@@ -117,7 +140,7 @@ export const projectsData: Project[] = [
     category: "web",
   },
   {
-    id: "9",
+    id: "10",
     title: "Taste Bites – Recipe App (v1)",
     description:
       "A React application that uses an external API to display recipes by category or region. Designed with Bootstrap and Hero Patterns.",
@@ -130,7 +153,7 @@ export const projectsData: Project[] = [
     category: "web",
   },
   {
-    id: "10",
+    id: "11",
     title: "Algorithm Quiz Game",
     description:
       "A prototype quiz game developed for Software Engineering 1 to help students understand how algorithms and binary operations work.",
@@ -143,7 +166,7 @@ export const projectsData: Project[] = [
     category: "web",
   },
   {
-    id: "11",
+    id: "12",
     title: "Portfolio Template – Glitch",
     description:
       "A mini portfolio project with a purple glitch-themed interface, flicker animations, and a custom glowing cursor.",
@@ -157,10 +180,10 @@ export const projectsData: Project[] = [
     category: "web",
   },
   {
-    id: "12",
+    id: "13",
     title: "Facebook Clone (React)",
     description:
-      "A React and Tailwind CSS project replicating Facebook’s layout, including a header, sidebar, main feed, and contacts section.",
+      "A React and Tailwind CSS project replicating Facebook's layout, including a header, sidebar, main feed, and contacts section.",
     technologies: ["React", "Tailwind"],
     liveUrl: "https://react-tailwind-facebook-clone.vercel.app",
     githubUrl: "https://github.com/Adrian9502/react-tailwind-facebook-clone",
@@ -170,7 +193,7 @@ export const projectsData: Project[] = [
     category: "web",
   },
   {
-    id: "13",
+    id: "14",
     title: "Expense Tracker",
     description:
       "A React app that tracks income and expenses in real time, visualized through charts and transaction lists.",
@@ -185,7 +208,7 @@ export const projectsData: Project[] = [
     category: "web",
   },
   {
-    id: "14",
+    id: "15",
     title: "React 20 Exercises App",
     description:
       "A collection of 20 mini React exercises demonstrating various React concepts, hooks, and state management techniques.",
@@ -198,7 +221,7 @@ export const projectsData: Project[] = [
     category: "web",
   },
   {
-    id: "15",
+    id: "16",
     title: "Chef Bytes – Recipe App (v2)",
     description:
       "A recipe application that lets users search recipes instantly, view ingredients, and manage favorite recipes in real time.",
@@ -211,7 +234,7 @@ export const projectsData: Project[] = [
     category: "web",
   },
   {
-    id: "16",
+    id: "17",
     title: "To-Do List (React)",
     description:
       "A simple to-do list app built with React + Vite and Bootstrap, focused on mastering useState and component reactivity.",
@@ -224,7 +247,7 @@ export const projectsData: Project[] = [
     category: "web",
   },
   {
-    id: "17",
+    id: "18",
     title: "Weather App (React)",
     description:
       "A weather app built with React and the OpenWeather API that displays real-time weather data for cities worldwide.",
@@ -237,7 +260,7 @@ export const projectsData: Project[] = [
     category: "web",
   },
   {
-    id: "18",
+    id: "19",
     title: "Color Picker App",
     description:
       "A simple React app that allows users to select, view, and explore color combinations, emphasizing useState and component updates.",
@@ -250,7 +273,7 @@ export const projectsData: Project[] = [
     category: "web",
   },
   {
-    id: "19",
+    id: "20",
     title: "Digital Clock and Date",
     description:
       "A digital clock and date app built with JavaScript and the Day.js library for accurate time formatting.",
@@ -263,7 +286,7 @@ export const projectsData: Project[] = [
     category: "web",
   },
   {
-    id: "20",
+    id: "21",
     title: "YouTube Clone (HTML/CSS)",
     description:
       "A static front-end clone of YouTube built through a 6-hour HTML and CSS course, designed to reinforce layout and styling fundamentals.",
@@ -276,7 +299,7 @@ export const projectsData: Project[] = [
     category: "web",
   },
   {
-    id: "21",
+    id: "22",
     title: "Weather App (JavaScript)",
     description:
       "A vanilla JavaScript weather app that fetches real-time weather data from an API, reinforcing the use of Fetch and async/await.",
@@ -289,7 +312,7 @@ export const projectsData: Project[] = [
     category: "web",
   },
   {
-    id: "22",
+    id: "23",
     title: "To-Do List (JavaScript)",
     description:
       "A basic JavaScript to-do list app that helps users manage daily tasks efficiently.",
@@ -302,7 +325,7 @@ export const projectsData: Project[] = [
     category: "web",
   },
   {
-    id: "23",
+    id: "24",
     title: "Snake Game (JavaScript)",
     description:
       "A simple classic Snake game built using HTML, CSS, and JavaScript.",
@@ -315,7 +338,7 @@ export const projectsData: Project[] = [
     category: "web",
   },
   {
-    id: "24",
+    id: "25",
     title: "Rock-Paper-Scissors (JavaScript)",
     description:
       "A lightweight web game built with JavaScript for quick and fun interaction.",
@@ -328,7 +351,7 @@ export const projectsData: Project[] = [
     category: "web",
   },
   {
-    id: "25",
+    id: "26",
     title: "Amazon Clone (JavaScript)",
     description:
       "An Amazon-style e-commerce clone built with vanilla JavaScript and the Fetch API, applying async/await, promises, and URL parameter concepts.",
