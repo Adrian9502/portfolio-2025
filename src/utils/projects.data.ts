@@ -8,7 +8,13 @@ export interface Project {
   githubUrl: string;
   imageUrl: string;
   featured: boolean;
-  category: "web" | "mobile" | "fullstack" | "Frontend" | "Backend";
+  category:
+    | "web"
+    | "mobile"
+    | "fullstack"
+    | "Frontend"
+    | "Backend"
+    | ("web" | "mobile" | "fullstack" | "Frontend" | "Backend")[];
 }
 
 export const projectsData: Project[] = [
@@ -36,7 +42,7 @@ export const projectsData: Project[] = [
     imageUrl:
       "https://github.com/Adrian9502/wikatalk-thesis-speech-interpreter/raw/main/web-ui.png",
     featured: true,
-    category: "fullstack",
+    category: ["mobile", "fullstack"],
   },
   // weLearn
   {

@@ -1,0 +1,114 @@
+/* Futuristic Button Styles */
+.futuristic-button {
+  position: relative;
+  padding: 1rem 2rem;
+  background: #020617;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  color: #00fefc;
+  font-family: "Tektur", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px #00fefc;
+}
+
+/* Animated border gradient */
+.futuristic-button::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #00fefc, #7e2de8, #00fefc, #7e2de8);
+  border-radius: 12px;
+  z-index: -1;
+  opacity: 0.8;
+  animation: borderRotate 3s linear infinite;
+}
+
+/* Inner glow effect */
+.futuristic-button::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background: linear-gradient(
+    135deg,
+    rgba(20, 25, 45, 0.95),
+    rgba(15, 20, 35, 0.98)
+  );
+  border-radius: 10px;
+  z-index: -1;
+}
+
+/* Hover effects */
+.futuristic-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 40px rgba(0, 240, 255, 0.4), 0 0 60px rgba(126, 45, 232, 0.3),
+    inset 0 0 30px rgba(0, 240, 255, 0.1);
+  color: #fff;
+}
+
+.futuristic-button:hover::before {
+  opacity: 1;
+  animation: borderRotate 1.5s linear infinite;
+}
+
+/* Active/pressed state */
+.futuristic-button:active {
+  transform: translateY(0);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.3),
+    inset 0 0 20px rgba(0, 240, 255, 0.15);
+}
+
+/* Button content wrapper for proper z-index */
+.futuristic-button-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Icon animations */
+.futuristic-button:hover .button-icon-left {
+  animation: pulseIcon 0.6s ease infinite;
+}
+
+.futuristic-button:hover .button-icon-right {
+  transform: translateX(4px);
+}
+
+/* Border rotation animation */
+@keyframes borderRotate {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulseIcon {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .futuristic-button {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
