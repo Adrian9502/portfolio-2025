@@ -12,7 +12,7 @@ const Projects: React.FC = () => {
       <Title title="Check out my latest projects and creative work." />
 
       {/* Projects Grid */}
-      <div className="w-[80%] p-10 mx-auto grid gap-12 md:grid-cols-2 lg:grid-cols-3">
+      <div className="w-[80%] p-10 mx-auto grid gap-6 md:grid-cols-3 lg:grid-cols-4">
         {projectsData.map((project, index) => (
           <ProjectsCard key={project.id} project={project} index={index} />
         ))}

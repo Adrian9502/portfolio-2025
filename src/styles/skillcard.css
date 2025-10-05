@@ -2,10 +2,10 @@
   /* Keep the --main-bg but make it transparent */
   --main-bg: conic-gradient(
     from var(--border-angle),
-    #0f172a,
-    #0f172a 5%,
-    #0f172a 60%,
-    #0f172a 95%
+    #020617,
+    #020617 5%,
+    #020617 60%,
+    #020617 95%
   );
   border: solid 2px rgb(32, 45, 77);
   --gradient-border: conic-gradient(

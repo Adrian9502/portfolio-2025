@@ -12,13 +12,17 @@ export interface Project {
 }
 
 export const projectsData: Project[] = [
+  // wikaTalk
   {
     id: "1",
     title: "WikaTalk – Filipino Dialect Interpreter",
     description:
-      "A feature-rich thesis project: a mobile app for translating and learning 10 Filipino dialects, built with React Native and Express.js. It combines NLP-powered translation, OCR text scanning, pronunciation guides, and gamified learning with coins, hints, and progress tracking for an engaging language experience.",
+      "A feature-rich thesis project and monorepo combining a React Native mobile app and a React + Tailwind web platform. Built with Express.js and MongoDB, it leverages NLP for dialect translation, OCR text scanning, pronunciation guides, and gamified learning with coins, hints, and progress tracking—delivering an engaging, multilingual learning experience.",
     technologies: [
       "React Native (Expo)",
+      "React",
+      "Tailwind CSS",
+      "Framer Motion",
       "TypeScript",
       "Express.js",
       "MongoDB",
@@ -32,9 +36,9 @@ export const projectsData: Project[] = [
     imageUrl:
       "https://github.com/Adrian9502/wikatalk-thesis-speech-interpreter/raw/main/web-ui.png",
     featured: true,
-    category: "mobile",
+    category: "fullstack",
   },
-
+  // weLearn
   {
     id: "2",
     title: "WeLearn – Web-Based Sorting Algorithms and Binary Operation Game",
@@ -48,34 +52,9 @@ export const projectsData: Project[] = [
     featured: true,
     category: "fullstack",
   },
+  // MERN Advanced Auth System
   {
     id: "3",
-    title: "Arise – Game Review Website",
-    description:
-      "A web project developed as a first college website assignment, showcasing basic front-end structure and design concepts learned during the second year.",
-    technologies: ["HTML", "CSS", "JavaScript"],
-    liveUrl: "https://arise-game-review.vercel.app",
-    githubUrl: "https://github.com/Adrian9502/Arise-Game-Review",
-    imageUrl:
-      "https://github.com/Adrian9502/Arise-Game-Review/blob/main/image_2024-09-01_214035526.png?raw=true",
-    featured: false,
-    category: "web",
-  },
-  {
-    id: "4",
-    title: "QuickBuy – E-Commerce Website",
-    description:
-      "An e-commerce platform built with React, Tailwind CSS, and Redux that allows users to browse products, view details, and manage their carts. It features product categories, search functionality, and a responsive design.",
-    technologies: ["React", "Tailwind", "Redux"],
-    liveUrl: "https://react-e-commerce-deploy2-quickbuy.vercel.app",
-    githubUrl: "https://github.com/Adrian9502/react-e-commerce",
-    imageUrl:
-      "https://github.com/Adrian9502/react-e-commerce/blob/main/img.png?raw=true",
-    featured: true,
-    category: "web",
-  },
-  {
-    id: "5",
     title: "MERN – Advanced Authentication System",
     description:
       "An authentication system built with the MERN stack and Tailwind CSS, supporting user registration, email verification, and password recovery.",
@@ -87,21 +66,9 @@ export const projectsData: Project[] = [
     featured: true,
     category: "fullstack",
   },
+  // MERN Blog App
   {
-    id: "6",
-    title: "Datkilab – Reverse Your Words",
-    description:
-      "A fun web app that reverses any text input, letting users playfully confuse their friends and group chats.",
-    technologies: ["React", "Tailwind"],
-    liveUrl: "https://react-datkilab.vercel.app",
-    githubUrl: "https://github.com/Adrian9502/react-datkilab",
-    imageUrl:
-      "https://github.com/Adrian9502/react-datkilab/blob/main/image_2024-12-12_110522495.png?raw=true",
-    featured: false,
-    category: "web",
-  },
-  {
-    id: "7",
+    id: "4",
     title: "MERN Blog App",
     description:
       "A basic CRUD blog application built with the MERN stack, allowing users to create, read, update, and delete posts.",
@@ -113,6 +80,48 @@ export const projectsData: Project[] = [
     featured: true,
     category: "fullstack",
   },
+  // Arise
+  {
+    id: "5",
+    title: "Arise – Game Review Website",
+    description:
+      "A web project developed as a first college website assignment, showcasing basic front-end structure and design concepts learned during the second year.",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    liveUrl: "https://arise-game-review.vercel.app",
+    githubUrl: "https://github.com/Adrian9502/Arise-Game-Review",
+    imageUrl:
+      "https://github.com/Adrian9502/Arise-Game-Review/blob/main/image_2024-09-01_214035526.png?raw=true",
+    featured: false,
+    category: "web",
+  },
+  // quickBuy
+  {
+    id: "6",
+    title: "QuickBuy – E-Commerce Website",
+    description:
+      "An e-commerce platform built with React, Tailwind CSS, and Redux that allows users to browse products, view details, and manage their carts. It features product categories, search functionality, and a responsive design.",
+    technologies: ["React", "Tailwind", "Redux"],
+    liveUrl: "https://react-e-commerce-deploy2-quickbuy.vercel.app",
+    githubUrl: "https://github.com/Adrian9502/react-e-commerce",
+    imageUrl:
+      "https://github.com/Adrian9502/react-e-commerce/blob/main/img.png?raw=true",
+    featured: true,
+    category: "web",
+  },
+  // Alutron - new
+  {
+    id: "7",
+    title: "4-Bit ALU Simulator – Visual Arithmetic Logic Unit",
+    description:
+      "An interactive educational simulator built with React and ReactFlow that visualizes how a 4-bit Arithmetic Logic Unit works. Users can experiment with binary arithmetic and logic operations (AND, OR, ADD) through a real-time, drag-and-drop interface with animated logic gates and carry operations.",
+    technologies: ["React", "TypeScript", "ReactFlow", "Tailwind CSS", "Vite"],
+    liveUrl: "https://alutron-alu-simulator.vercel.app/",
+    githubUrl: "https://github.com/Adrian9502/ALUtron",
+    imageUrl: "https://github.com/Adrian9502/ALUtron/raw/main/display.png",
+    featured: false,
+    category: "web",
+  },
+  // BakeMart
   {
     id: "8",
     title: "BakeMart – Café and Bakery Website",
@@ -126,19 +135,21 @@ export const projectsData: Project[] = [
     featured: false,
     category: "web",
   },
+  // Chef Bytes v2
   {
     id: "9",
-    title: "YouTube Clone (React)",
+    title: "Chef Bytes – Recipe App (v2)",
     description:
-      "A YouTube-like app built with React and Tailwind CSS that lets users search, browse, and watch videos using a public API.",
+      "A recipe application that lets users search recipes instantly, view ingredients, and manage favorite recipes in real time.",
     technologies: ["React", "Tailwind"],
-    liveUrl: "https://react-tailwind-youtube-clone-kohl.vercel.app",
-    githubUrl: "https://github.com/Adrian9502/react-tailwind-youtube-clone",
+    liveUrl: "https://react-tailwind-recipe-app-2-vercel-deploy.vercel.app",
+    githubUrl: "https://github.com/Adrian9502/react-tailwind-recipe-app-2",
     imageUrl:
-      "https://github.com/Adrian9502/react-tailwind-youtube-clone/blob/main/yt.png?raw=true",
+      "https://github.com/Adrian9502/react-tailwind-recipe-app-2/blob/main/img.png?raw=true",
     featured: false,
     category: "web",
   },
+  // Taste Bites
   {
     id: "10",
     title: "Taste Bites – Recipe App (v1)",
@@ -152,6 +163,7 @@ export const projectsData: Project[] = [
     featured: false,
     category: "web",
   },
+  // Algorithm Quiz Game
   {
     id: "11",
     title: "Algorithm Quiz Game",
@@ -165,6 +177,7 @@ export const projectsData: Project[] = [
     featured: false,
     category: "web",
   },
+  // Portfolio Template - Glitch
   {
     id: "12",
     title: "Portfolio Template – Glitch",
@@ -179,8 +192,37 @@ export const projectsData: Project[] = [
     featured: false,
     category: "web",
   },
+  // Datkilab
   {
     id: "13",
+    title: "Datkilab – Reverse Your Words",
+    description:
+      "A fun web app that reverses any text input, letting users playfully confuse their friends and group chats.",
+    technologies: ["React", "Tailwind"],
+    liveUrl: "https://react-datkilab.vercel.app",
+    githubUrl: "https://github.com/Adrian9502/react-datkilab",
+    imageUrl:
+      "https://github.com/Adrian9502/react-datkilab/blob/main/image_2024-12-12_110522495.png?raw=true",
+    featured: false,
+    category: "web",
+  },
+  // YouTube Clone
+  {
+    id: "14",
+    title: "YouTube Clone (React)",
+    description:
+      "A YouTube-like app built with React and Tailwind CSS that lets users search, browse, and watch videos using a public API.",
+    technologies: ["React", "Tailwind"],
+    liveUrl: "https://react-tailwind-youtube-clone-kohl.vercel.app",
+    githubUrl: "https://github.com/Adrian9502/react-tailwind-youtube-clone",
+    imageUrl:
+      "https://github.com/Adrian9502/react-tailwind-youtube-clone/blob/main/yt.png?raw=true",
+    featured: false,
+    category: "web",
+  },
+  // Facebook Clone
+  {
+    id: "15",
     title: "Facebook Clone (React)",
     description:
       "A React and Tailwind CSS project replicating Facebook's layout, including a header, sidebar, main feed, and contacts section.",
@@ -192,8 +234,9 @@ export const projectsData: Project[] = [
     featured: false,
     category: "web",
   },
+  // Expense Tracker
   {
-    id: "14",
+    id: "16",
     title: "Expense Tracker",
     description:
       "A React app that tracks income and expenses in real time, visualized through charts and transaction lists.",
@@ -207,8 +250,9 @@ export const projectsData: Project[] = [
     featured: false,
     category: "web",
   },
+  // React 20 Exercises
   {
-    id: "15",
+    id: "17",
     title: "React 20 Exercises App",
     description:
       "A collection of 20 mini React exercises demonstrating various React concepts, hooks, and state management techniques.",
@@ -220,21 +264,9 @@ export const projectsData: Project[] = [
     featured: false,
     category: "web",
   },
+  // To-Do List (React)
   {
-    id: "16",
-    title: "Chef Bytes – Recipe App (v2)",
-    description:
-      "A recipe application that lets users search recipes instantly, view ingredients, and manage favorite recipes in real time.",
-    technologies: ["React", "Tailwind"],
-    liveUrl: "https://react-tailwind-recipe-app-2-vercel-deploy.vercel.app",
-    githubUrl: "https://github.com/Adrian9502/react-tailwind-recipe-app-2",
-    imageUrl:
-      "https://github.com/Adrian9502/react-tailwind-recipe-app-2/blob/main/img.png?raw=true",
-    featured: false,
-    category: "web",
-  },
-  {
-    id: "17",
+    id: "18",
     title: "To-Do List (React)",
     description:
       "A simple to-do list app built with React + Vite and Bootstrap, focused on mastering useState and component reactivity.",
@@ -246,8 +278,9 @@ export const projectsData: Project[] = [
     featured: false,
     category: "web",
   },
+  // Weather App (React)
   {
-    id: "18",
+    id: "19",
     title: "Weather App (React)",
     description:
       "A weather app built with React and the OpenWeather API that displays real-time weather data for cities worldwide.",
@@ -259,8 +292,9 @@ export const projectsData: Project[] = [
     featured: false,
     category: "web",
   },
+  // Color Picker App
   {
-    id: "19",
+    id: "20",
     title: "Color Picker App",
     description:
       "A simple React app that allows users to select, view, and explore color combinations, emphasizing useState and component updates.",
@@ -272,8 +306,9 @@ export const projectsData: Project[] = [
     featured: false,
     category: "web",
   },
+  // Digital Clock and Date
   {
-    id: "20",
+    id: "21",
     title: "Digital Clock and Date",
     description:
       "A digital clock and date app built with JavaScript and the Day.js library for accurate time formatting.",
@@ -285,8 +320,9 @@ export const projectsData: Project[] = [
     featured: false,
     category: "web",
   },
+  // YouTube Clone (HTML/CSS)
   {
-    id: "21",
+    id: "22",
     title: "YouTube Clone (HTML/CSS)",
     description:
       "A static front-end clone of YouTube built through a 6-hour HTML and CSS course, designed to reinforce layout and styling fundamentals.",
@@ -298,8 +334,9 @@ export const projectsData: Project[] = [
     featured: false,
     category: "web",
   },
+  // Weather App (JavaScript)
   {
-    id: "22",
+    id: "23",
     title: "Weather App (JavaScript)",
     description:
       "A vanilla JavaScript weather app that fetches real-time weather data from an API, reinforcing the use of Fetch and async/await.",
@@ -311,8 +348,9 @@ export const projectsData: Project[] = [
     featured: false,
     category: "web",
   },
+  // To-Do List (JavaScript)
   {
-    id: "23",
+    id: "24",
     title: "To-Do List (JavaScript)",
     description:
       "A basic JavaScript to-do list app that helps users manage daily tasks efficiently.",
@@ -324,8 +362,9 @@ export const projectsData: Project[] = [
     featured: false,
     category: "web",
   },
+  // Snake Game (JavaScript)
   {
-    id: "24",
+    id: "25",
     title: "Snake Game (JavaScript)",
     description:
       "A simple classic Snake game built using HTML, CSS, and JavaScript.",
@@ -337,8 +376,9 @@ export const projectsData: Project[] = [
     featured: false,
     category: "web",
   },
+  // Rock-Paper-Scissors (JavaScript)
   {
-    id: "25",
+    id: "26",
     title: "Rock-Paper-Scissors (JavaScript)",
     description:
       "A lightweight web game built with JavaScript for quick and fun interaction.",
@@ -350,8 +390,9 @@ export const projectsData: Project[] = [
     featured: false,
     category: "web",
   },
+  // Amazon Clone (JavaScript)
   {
-    id: "26",
+    id: "27",
     title: "Amazon Clone (JavaScript)",
     description:
       "An Amazon-style e-commerce clone built with vanilla JavaScript and the Fetch API, applying async/await, promises, and URL parameter concepts.",
