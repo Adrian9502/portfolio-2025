@@ -9,10 +9,10 @@ const Projects: React.FC = () => {
       id="Projects"
       className="p-2 mt-10 py-10 flex-col gap-8 overflow-hidden flex items-center justify-center sm:p-14 mb-32 "
     >
-      <Title title="Check out my latest projects and creative work." />
+      <Title title="Here’s a glimpse of my projects." />
 
       {/* Projects Grid */}
-      <div className="w-[80%] p-10 mx-auto grid gap-6 md:grid-cols-3 lg:grid-cols-4">
+      <div className="w-[80%] p-10 mx-auto grid gap-12 md:grid-cols-2 lg:grid-cols-3">
         {projectsData.map((project, index) => (
           <ProjectsCard key={project.id} project={project} index={index} />
         ))}
