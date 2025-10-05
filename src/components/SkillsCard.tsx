@@ -22,7 +22,7 @@ const SkillsCard: React.FC<SkillCardProps> = ({ icon, title, description }) => {
             {title}
           </h3>
         </div>
-        <div className="text-xs md:text-sm text-slate-200 font-tektur tracking-widest">
+        <div className="text-xs hover:text-slate-300 duration-300 md:text-sm text-slate-400 font-poppins ">
           <p>{description}</p>
         </div>
       </div>

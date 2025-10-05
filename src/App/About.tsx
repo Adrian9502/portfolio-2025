@@ -52,42 +52,51 @@ function About() {
             animate="visible"
             variants={fadeInUp}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-md md:text-lg font-poppins text-slate-400 text-start"
+            className="text-md  font-poppins text-slate-400 text-start"
           >
-            An{" "}
+            I'm a{" "}
+            <span className="font-bold text-slate-300">Software Engineer</span>{" "}
+            with an unconventional path to code. After nearly two years working
+            production at{" "}
             <span className="font-bold text-slate-300">
-              Aspiring Software Engineer
-            </span>{" "}
-            specializing in{" "}
+              Red Ribbon Bakeshop
+            </span>
+            —where I learned the value of teamwork, precision, and performing
+            under pressure—I discovered my passion for building software.
+            <br /> <br />
+            That curiosity turned into commitment, and commitment turned into
+            capability.
+            <br /> <br />
+            Today, I build full-stack web applications using{" "}
             <span className="font-bold text-slate-300">React.js</span>,{" "}
             <span className="font-bold text-slate-300">Tailwind CSS</span>, and
-            the <span className="font-bold text-slate-300">MERN stack</span>.
-            <br /> <br />
-            I’ve built a wide range of projects — from practice apps and UI
-            clones to full-stack applications and academic thesis projects. My{" "}
+            the <span className="font-bold text-slate-300">MERN stack</span>,
+            with a strong focus on front-end development. My{" "}
             <a
               href="https://github.com/Adrian9502?tab=repositories"
               target="_blank"
             >
               <span className="font-bold text-slate-300">GitHub</span>
             </a>{" "}
-            and portfolio feature over{" "}
-            <span className="font-bold text-slate-300">20+</span> public
-            repositories, reflecting consistent coding practice and a passion
-            for continuous learning.
+            tells the story:{" "}
+            <span className="font-bold text-slate-300">20+ repositories</span>{" "}
+            documenting my journey from practice projects to production-grade
+            applications, including a React Native mobile app I engineered for
+            my thesis.
             <br /> <br />
-            In addition, my two years as a{" "}
-            <span className="font-bold text-slate-300">
-              Production Crew member at Red Ribbon Bakeshop
-            </span>{" "}
-            strengthened my professionalism, teamwork, and time management —
-            qualities I now bring into collaborative development and
-            deadline-driven coding projects.
-            <br /> <br />I enjoy learning new tools, working with others, and
-            turning ideas into practical, impactful solutions. Outside of
-            coding, you’ll often find me{" "}
+            What excites me most? Turning complex problems into elegant
+            solutions. Learning technologies that push my boundaries.
+            Collaborating with others who share the same drive to build
+            something meaningful.
+            <br /> <br />
+            The production floor taught me reliability. Coding taught me
+            creativity. Together, they've shaped how I approach every
+            project—with discipline, curiosity, and determination to deliver
+            quality work.
+            <br /> <br />
+            When I'm not coding, I'm{" "}
             <span className="font-bold text-slate-300">cycling</span> with
-            friends. 🚴‍♂️
+            friends—because the best ideas often come when you're moving. 🚴‍♂️
             <br /> <br />
           </motion.div>
         </div>
