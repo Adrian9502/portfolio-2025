@@ -50,7 +50,15 @@ export const projectsData: Project[] = [
     title: "WeLearn – Web-Based Sorting Algorithms and Binary Operation Game",
     description:
       "An interactive MERN stack quiz platform designed to help students and enthusiasts learn sorting algorithms and binary operations through engaging, structured quizzes. Built as a Software Engineering 2 project.",
-    technologies: ["MongoDB", "ExpressJS", "React", "Node.js", "Tailwind"],
+    technologies: [
+      "MongoDB",
+      "ExpressJS",
+      "React",
+      "Node.js",
+      "Tailwind",
+      "Framer Motion",
+      "Zustand",
+    ],
     liveUrl: "https://welearngame.vercel.app",
     githubUrl: "https://github.com/Adrian9502/WeLearn-SE2",
     imageUrl:

@@ -1,7 +1,7 @@
 /* Futuristic Button Styles */
 .futuristic-button {
   position: relative;
-  padding: 1rem 2rem;
+  padding: 1rem 2.5rem;
   background: #020617;
   border: 2px solid transparent;
   border-radius: 12px;
@@ -13,6 +13,10 @@
   overflow: hidden;
   transition: all 0.3s ease;
   box-shadow: 0 0 10px #00fefc;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: max-content;
 }
 
 /* Animated border gradient */
@@ -71,6 +75,7 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  white-space: nowrap;
 }
 
 /* Icon animations */
@@ -106,9 +111,58 @@
 }
 
 /* Responsive adjustments */
+@media (max-width: 768px) {
+  .futuristic-button {
+    padding: 0.875rem 2rem;
+    font-size: 0.95rem;
+  }
+
+  .futuristic-button-content {
+    gap: 0.625rem;
+  }
+}
+
 @media (max-width: 640px) {
   .futuristic-button {
-    padding: 0.875rem 1.5rem;
-    font-size: 0.9rem;
+    padding: 0.75rem 1.75rem;
+    font-size: 0.875rem;
+  }
+
+  .futuristic-button-content {
+    gap: 0.5rem;
+  }
+
+  .futuristic-button-content svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .futuristic-button {
+    padding: 0.625rem 1.5rem;
+    font-size: 0.8rem;
+    min-width: auto;
+  }
+
+  .futuristic-button-content {
+    gap: 0.5rem;
+  }
+
+  .futuristic-button-content svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* Ultra small screens */
+@media (max-width: 380px) {
+  .futuristic-button {
+    padding: 0.5rem 1.25rem;
+    font-size: 0.75rem;
+  }
+
+  .futuristic-button-content span {
+    font-size: 0.75rem;
   }
 }
