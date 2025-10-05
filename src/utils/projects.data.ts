@@ -14,9 +14,9 @@ export interface Project {
 export const projectsData: Project[] = [
   {
     id: "1",
-    title: "WeLearn - Web based sorting algorithms and binary operation game",
+    title: "WeLearn – Web-Based Sorting Algorithms and Binary Operation Game",
     description:
-      "A Software Engineering 2 Project. This MERN stack application is an interactive quiz platform designed to help students and enthusiasts learn and practice sorting algorithms and binary operations through engaging, structured quizzes.",
+      "An interactive MERN stack quiz platform designed to help students and enthusiasts learn sorting algorithms and binary operations through engaging, structured quizzes. Built as a Software Engineering 2 project.",
     technologies: ["MongoDB", "ExpressJS", "React", "Node.js", "Tailwind"],
     liveUrl: "https://welearngame.vercel.app",
     githubUrl: "https://github.com/Adrian9502/WeLearn-SE2",
@@ -27,9 +27,9 @@ export const projectsData: Project[] = [
   },
   {
     id: "2",
-    title: "Arise - Game Review",
+    title: "Arise – Game Review Website",
     description:
-      "This is my first website project and also this is our first website project in school at 2nd year college. Finished - February 13, 2024",
+      "A web project developed as a first college website assignment, showcasing basic front-end structure and design concepts learned during the second year.",
     technologies: ["HTML", "CSS", "JavaScript"],
     liveUrl: "https://arise-game-review.vercel.app",
     githubUrl: "https://github.com/Adrian9502/Arise-Game-Review",
@@ -40,9 +40,9 @@ export const projectsData: Project[] = [
   },
   {
     id: "3",
-    title: "QuickBuy - E-Commerce",
+    title: "QuickBuy – E-Commerce Website",
     description:
-      "An e-commerce website built with React, Tailwind CSS, and Redux uses an API to enable users to browse products, view details, and manage their shopping cart. It features a responsive design with product categories, a search function, and easy cart management.",
+      "An e-commerce platform built with React, Tailwind CSS, and Redux that allows users to browse products, view details, and manage their carts. It features product categories, search functionality, and a responsive design.",
     technologies: ["React", "Tailwind", "Redux"],
     liveUrl: "https://react-e-commerce-deploy2-quickbuy.vercel.app",
     githubUrl: "https://github.com/Adrian9502/react-e-commerce",
@@ -53,9 +53,9 @@ export const projectsData: Project[] = [
   },
   {
     id: "4",
-    title: "MERN - Advance Auth",
+    title: "MERN – Advanced Authentication System",
     description:
-      "This is a simple authentication system built with the MERN stack (MongoDB, Express, React, Node.js) and styled using Tailwind CSS. The system supports user registration, email verification, and password recovery.",
+      "An authentication system built with the MERN stack and Tailwind CSS, supporting user registration, email verification, and password recovery.",
     technologies: ["MongoDB", "ExpressJS", "React", "Node.js", "Tailwind"],
     liveUrl: "https://mern-advance-auth-system.vercel.app/login",
     githubUrl: "https://github.com/Adrian9502/mern-advance-auth-system",
@@ -66,9 +66,9 @@ export const projectsData: Project[] = [
   },
   {
     id: "5",
-    title: "Datkilab - Reverse your words",
+    title: "Datkilab – Reverse Your Words",
     description:
-      "Flip your words and mess with your friends! Watch your text get reversed. It's a fun way to confuse your group chats and have a laugh!",
+      "A fun web app that reverses any text input, letting users playfully confuse their friends and group chats.",
     technologies: ["React", "Tailwind"],
     liveUrl: "https://react-datkilab.vercel.app",
     githubUrl: "https://github.com/Adrian9502/react-datkilab",
@@ -81,7 +81,7 @@ export const projectsData: Project[] = [
     id: "6",
     title: "MERN Blog App",
     description:
-      "A basic blog app using the MERN stack (MongoDB, Express, React, Node.js) lets users create, read, update, and delete blog posts.",
+      "A basic CRUD blog application built with the MERN stack, allowing users to create, read, update, and delete posts.",
     technologies: ["MongoDB", "ExpressJS", "React", "Node.js", "Tailwind"],
     liveUrl: "https://mern-blog-app-with-tailwind-frontend.vercel.app",
     githubUrl: "https://github.com/Adrian9502/mern-blog-app-with-tailwind",
@@ -92,9 +92,9 @@ export const projectsData: Project[] = [
   },
   {
     id: "7",
-    title: "BakeMart - Cafe and Bakery",
+    title: "BakeMart – Café and Bakery Website",
     description:
-      "I created this website UI for my Graphic Design subject, using React and Tailwind CSS for its development.",
+      "A front-end website UI for a café and bakery, built with React and Tailwind CSS as part of a Graphic Design subject.",
     technologies: ["React", "Tailwind"],
     liveUrl: "https://bakemart-cafe-and-bakery-deploy.vercel.app/",
     githubUrl: "https://github.com/Adrian9502/bakemart-cafe-and-bakery",
@@ -105,9 +105,9 @@ export const projectsData: Project[] = [
   },
   {
     id: "8",
-    title: "Youtube Clone React",
+    title: "YouTube Clone (React)",
     description:
-      "This project is a simple YouTube clone made with React and Tailwind CSS, using an API to allow users to search for and watch videos, as well as browse available content.",
+      "A YouTube-like app built with React and Tailwind CSS that lets users search, browse, and watch videos using a public API.",
     technologies: ["React", "Tailwind"],
     liveUrl: "https://react-tailwind-youtube-clone-kohl.vercel.app",
     githubUrl: "https://github.com/Adrian9502/react-tailwind-youtube-clone",
@@ -118,9 +118,9 @@ export const projectsData: Project[] = [
   },
   {
     id: "9",
-    title: "Taste Bites - Recipe App 1",
+    title: "Taste Bites – Recipe App (v1)",
     description:
-      "This is a React-based application that uses an API to let users search for recipes and display them by category or region. Built with Bootstrap and Hero Patterns.",
+      "A React application that uses an external API to display recipes by category or region. Designed with Bootstrap and Hero Patterns.",
     technologies: ["React", "Bootstrap"],
     liveUrl: "https://react-recipe-app-with-api-vercel.vercel.app",
     githubUrl: "https://github.com/Adrian9502/react-recipe-app-with-api",
@@ -133,7 +133,7 @@ export const projectsData: Project[] = [
     id: "10",
     title: "Algorithm Quiz Game",
     description:
-      "Prototype from our Software Engineering 1 subject. It aims to teach students how algorithms and binary operations work.",
+      "A prototype quiz game developed for Software Engineering 1 to help students understand how algorithms and binary operations work.",
     technologies: ["HTML", "CSS", "JavaScript"],
     liveUrl: "https://js-quiz-game-pixel-theme.vercel.app",
     githubUrl: "https://github.com/Adrian9502/js-quiz-game-pixel-theme",
@@ -144,9 +144,9 @@ export const projectsData: Project[] = [
   },
   {
     id: "11",
-    title: "Portfolio Template - Glitch",
+    title: "Portfolio Template – Glitch",
     description:
-      "This is the mini project i've created with purple theme and glitch,flick effect animation with customized glowing cursor.",
+      "A mini portfolio project with a purple glitch-themed interface, flicker animations, and a custom glowing cursor.",
     technologies: ["HTML", "CSS", "JavaScript"],
     liveUrl: "https://portfolio-template-with-glitch-animations.vercel.app",
     githubUrl:
@@ -158,9 +158,9 @@ export const projectsData: Project[] = [
   },
   {
     id: "12",
-    title: "Facebook Clone",
+    title: "Facebook Clone (React)",
     description:
-      "A simple Facebook clone built with React, Tailwind CSS, React Icons, and React Loader Spinner. The app features a header, sidebar, main content area, and a contacts section on the right.",
+      "A React and Tailwind CSS project replicating Facebook’s layout, including a header, sidebar, main feed, and contacts section.",
     technologies: ["React", "Tailwind"],
     liveUrl: "https://react-tailwind-facebook-clone.vercel.app",
     githubUrl: "https://github.com/Adrian9502/react-tailwind-facebook-clone",
@@ -173,7 +173,7 @@ export const projectsData: Project[] = [
     id: "13",
     title: "Expense Tracker",
     description:
-      "This React app helps you track your expenses and income. You can add transaction details and see them updated in real time on a chart. A list of transactions is also displayed below the chart.",
+      "A React app that tracks income and expenses in real time, visualized through charts and transaction lists.",
     technologies: ["React", "Tailwind", "Chakra UI", "Apex Chart"],
     liveUrl:
       "https://react-expense-tracker-using-chakra-ui-and-apexchart.vercel.app",
@@ -188,7 +188,7 @@ export const projectsData: Project[] = [
     id: "14",
     title: "React 20 Exercises App",
     description:
-      "This project is a collection of 20 simple React exercises that demonstrate various concepts and functionalities in React. Each component showcases a different feature or tool, providing a comprehensive overview of practical React use cases.",
+      "A collection of 20 mini React exercises demonstrating various React concepts, hooks, and state management techniques.",
     technologies: ["React", "Tailwind"],
     liveUrl: "https://react-20-exercises-vercel-deployment.vercel.app",
     githubUrl: "https://github.com/Adrian9502/react-20-exercises",
@@ -199,9 +199,9 @@ export const projectsData: Project[] = [
   },
   {
     id: "15",
-    title: "Chef Bytes - Recipe App 2",
+    title: "Chef Bytes – Recipe App (v2)",
     description:
-      "This Recipe App lets users search for recipes instantly as they type. Users can see recipe details, including ingredients, and add recipes to their favorites. They can also view and remove recipes from their favorites list.",
+      "A recipe application that lets users search recipes instantly, view ingredients, and manage favorite recipes in real time.",
     technologies: ["React", "Tailwind"],
     liveUrl: "https://react-tailwind-recipe-app-2-vercel-deploy.vercel.app",
     githubUrl: "https://github.com/Adrian9502/react-tailwind-recipe-app-2",
@@ -212,9 +212,9 @@ export const projectsData: Project[] = [
   },
   {
     id: "16",
-    title: "To Do List - React",
+    title: "To-Do List (React)",
     description:
-      "This project is a simple todo list application built using React + Vite and Bootstrap. Understanding how useState work in ReactJS",
+      "A simple to-do list app built with React + Vite and Bootstrap, focused on mastering useState and component reactivity.",
     technologies: ["React", "Bootstrap"],
     liveUrl: "https://todolist-vercel-five.vercel.app",
     githubUrl: "https://github.com/Adrian9502/react-to-do-list",
@@ -225,9 +225,9 @@ export const projectsData: Project[] = [
   },
   {
     id: "17",
-    title: "Weather App",
+    title: "Weather App (React)",
     description:
-      "This project is a simple weather application built using React and the OpenWeather API. It allows users to search for and view the current weather conditions in any city around the world.",
+      "A weather app built with React and the OpenWeather API that displays real-time weather data for cities worldwide.",
     technologies: ["React", "Bootstrap"],
     liveUrl: "https://weather-app-vercel-sepia.vercel.app",
     githubUrl: "https://github.com/Adrian9502/react-weather-app",
@@ -240,7 +240,7 @@ export const projectsData: Project[] = [
     id: "18",
     title: "Color Picker App",
     description:
-      "A simple Color Picker application built with React. This app allows users to select and view different colors. Understanding how useState work in ReactJS",
+      "A simple React app that allows users to select, view, and explore color combinations, emphasizing useState and component updates.",
     technologies: ["React", "CSS"],
     liveUrl: "https://react-color-picker-iota.vercel.app",
     githubUrl: "https://github.com/Adrian9502/react-color-picker",
@@ -253,7 +253,7 @@ export const projectsData: Project[] = [
     id: "19",
     title: "Digital Clock and Date",
     description:
-      "JavaScript digital clock and date using dayjs external library",
+      "A digital clock and date app built with JavaScript and the Day.js library for accurate time formatting.",
     technologies: ["HTML", "CSS", "JavaScript"],
     liveUrl: "https://js-digital-clock-and-date.vercel.app",
     githubUrl: "https://github.com/Adrian9502/JS-digital-clock-and-date",
@@ -264,9 +264,9 @@ export const projectsData: Project[] = [
   },
   {
     id: "20",
-    title: "Youtube Clone - CSS",
+    title: "YouTube Clone (HTML/CSS)",
     description:
-      "Made from YouTube tutorial (supersimpleDev) 6 hours HTML, CSS course. I've learned a lot from this project and understand how css work.",
+      "A static front-end clone of YouTube built through a 6-hour HTML and CSS course, designed to reinforce layout and styling fundamentals.",
     technologies: ["HTML", "CSS"],
     liveUrl: "https://adrian9502.github.io/YouTube-Clone/",
     githubUrl: "https://github.com/Adrian9502/YouTube-Clone",
@@ -277,9 +277,9 @@ export const projectsData: Project[] = [
   },
   {
     id: "21",
-    title: "Weather App - JavaScript",
+    title: "Weather App (JavaScript)",
     description:
-      "A weather app built with vanilla JavaScript that fetches real-time weather data from an API, helping me understand how fetching works.",
+      "A vanilla JavaScript weather app that fetches real-time weather data from an API, reinforcing the use of Fetch and async/await.",
     technologies: ["HTML", "CSS", "JavaScript"],
     liveUrl: "https://adrian9502.github.io/JS-Weather-app/",
     githubUrl: "https://github.com/Adrian9502/JS-Weather-app",
@@ -290,9 +290,9 @@ export const projectsData: Project[] = [
   },
   {
     id: "22",
-    title: "To Do List - JavaScript",
+    title: "To-Do List (JavaScript)",
     description:
-      "Simple JavaScript To-Do List app to manage tasks efficiently.",
+      "A basic JavaScript to-do list app that helps users manage daily tasks efficiently.",
     technologies: ["HTML", "CSS", "JavaScript"],
     liveUrl: "https://js-to-do-list-vert.vercel.app",
     githubUrl: "https://github.com/Adrian9502/JS-ToDo-List",
@@ -303,8 +303,9 @@ export const projectsData: Project[] = [
   },
   {
     id: "23",
-    title: "Snake Game - JavaScript",
-    description: "A simple Snake game built with HTML, CSS, and JavaScript",
+    title: "Snake Game (JavaScript)",
+    description:
+      "A simple classic Snake game built using HTML, CSS, and JavaScript.",
     technologies: ["HTML", "CSS", "JavaScript"],
     liveUrl: "https://js-quiz-game-pixel-theme.vercel.app",
     githubUrl: "https://github.com/Adrian9502/JS-Snake-Game",
@@ -315,8 +316,9 @@ export const projectsData: Project[] = [
   },
   {
     id: "24",
-    title: "Rock-Paper-Scissors",
-    description: "Simple rock paper scissors in javascript.",
+    title: "Rock-Paper-Scissors (JavaScript)",
+    description:
+      "A lightweight web game built with JavaScript for quick and fun interaction.",
     technologies: ["HTML", "CSS", "JavaScript"],
     liveUrl: "https://js-rock-paper-scissors-ruddy.vercel.app",
     githubUrl: "https://github.com/Adrian9502/JS-rock-paper-scissors",
@@ -327,9 +329,9 @@ export const projectsData: Project[] = [
   },
   {
     id: "25",
-    title: "Amazon clone - Vanilla JS",
+    title: "Amazon Clone (JavaScript)",
     description:
-      "This Amazon clone project, inspired by a YouTube tutorial, uses the Fetch API and covers concepts like async/await, promises, and URL parameters. It significantly boosted my JavaScript skills.",
+      "An Amazon-style e-commerce clone built with vanilla JavaScript and the Fetch API, applying async/await, promises, and URL parameter concepts.",
     technologies: ["HTML", "CSS", "JavaScript"],
     liveUrl: "https://js-amazon-clone.vercel.app",
     githubUrl: "https://github.com/Adrian9502/js-amazon-clone",
