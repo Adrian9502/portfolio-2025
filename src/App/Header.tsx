@@ -85,7 +85,7 @@ function Header() {
         </button>
 
         {/* Desktop Navigation */}
-        <div className="hidden z-50 p-1 uppercase rounded-2xl bg-slate-950/80 backdrop-blur-xs border-trail lg:flex md:justify-center items-center justify-center space-x-6">
+        <div className="hidden z-50 p-[2px] uppercase rounded-2xl bg-slate-950/80 backdrop-blur-xs border-trail lg:flex md:justify-center items-center justify-center space-x-6">
           {/* Logo */}
           <a
             href="/"
