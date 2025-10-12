@@ -20,7 +20,7 @@ function About() {
       className="flex shadow-lg items-center flex-col sm:p-14 py-10 "
     >
       {/* Title Component */}
-      <Title title={"Discover more about my passions and interests."} />
+      <Title title={"Driven by curiosity, grounded in code."} />
 
       <div className="flex w-full sm:w-[80%] flex-col z-10 2xl:flex-row pointer-events-auto items-center gap-2 justify-around mt-10">
         {/* Left: Text Section */}

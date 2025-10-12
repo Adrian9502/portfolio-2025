@@ -20,7 +20,7 @@ export default function Skills() {
       className="p-2 mt-10 py-10 flex-col gap-8 overflow-hidden flex items-center justify-center sm:p-14 mb-32 "
     >
       {/* Title section */}
-      <Title title="These are the skills I've gained throughout my development journey." />
+      <Title title="Tools that power every launch." />
       {/* Skills section */}
       <div
         ref={primarySkillsRef}

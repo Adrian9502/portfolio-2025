@@ -40,7 +40,7 @@ const Contact: React.FC = () => {
       id="Contact"
       className="p-2 mt-10 py-10 flex-col gap-8 overflow-hidden flex items-center justify-center sm:p-14 mb-32 "
     >
-      <Title title="Let's connect and discuss potential opportunities." />
+      <Title title="Let’s collaborate and build something stellar" />
 
       <div className="w-[80%] mx-auto grid gap-8 lg:grid-cols-2">
         {/* Contact Information */}

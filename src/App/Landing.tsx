@@ -61,21 +61,21 @@ function Landing() {
       <div className="absolute p-3 z-50 flex flex-col items-center justify-center">
         <motion.div
           {...motionProps.passionate}
-          className="text-lg sm:text-xl md:text-2xl font-tektur tracking-widest lg:text-2xl flex flex-col text-slate-100 font-medium items-center lg:items-stretch drop-shadow-[0_0_1px_#242424]"
+          className="text-sm sm:text-xl md:text-2xl font-tektur tracking-widest lg:text-2xl flex flex-col text-slate-100 font-medium items-center lg:items-stretch drop-shadow-[0_0_1px_#242424]"
         >
           A
         </motion.div>
 
         <motion.div
           {...motionProps.webDev}
-          className="text-center lg:py-4 text-4xl font-tektur tracking-widest text-neon-cyan sm:text-6xl drop-shadow-[0_0_5px_#7e2de8] md:text-5xl lg:text-[90px] font-bold"
+          className="text-center py-4 text-4xl font-tektur tracking-widest text-neon-cyan sm:text-6xl drop-shadow-[0_0_5px_#7e2de8] md:text-5xl lg:text-[90px] font-bold"
         >
           Software Engineer
         </motion.div>
 
         <motion.div
           {...motionProps.specializing}
-          className="text-lg font-medium sm:text-xl md:text-2xl font-tektur tracking-widest lg:text-2xl flex flex-col text-slate-100 items-center lg:items-stretch drop-shadow-[0_0_1px_#242424] p-3"
+          className="text-sm font-medium sm:text-xl md:text-2xl font-tektur tracking-widest lg:text-2xl flex flex-col text-slate-100 items-center lg:items-stretch drop-shadow-[0_0_1px_#242424] p-3"
         >
           Specializing in
         </motion.div>
@@ -85,15 +85,12 @@ function Landing() {
           className="text-neon-cyan py-4 font-tektur tracking-widest lg:py-3 text-4xl sm:text-6xl md:text-5xl lg:text-[90px] font-bold text-center drop-shadow-[0_0_5px_#7e2de8]"
         >
           Front-End Development
-          {/* Front-End Development */}
         </motion.div>
 
         <motion.div
           {...motionProps.creating}
           className="text-sm font-tektur text-slate-100 font-medium tracking-widest sm:text-base md:text-lg lg:text-xl text-center drop-shadow-[0_0_1px_#242424] mt-4"
         >
-          {/* Creating engaging, responsive, and user-friendly websites with modern
-          technologies */}
           Combining technical excellence with user-centric design for impactful
           digital experiences
         </motion.div>

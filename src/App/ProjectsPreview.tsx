@@ -36,7 +36,7 @@ const ProjectsPreview: React.FC = () => {
       id="Projects"
       className="p-2 mt-10 py-10 flex-col gap-8 overflow-hidden flex items-center justify-center sm:p-14 mb-32"
     >
-      <Title title="Here's a glimpse of my projects." />
+      <Title title="Turning ideas into working systems." />
 
       {/* Projects Grid - Only 3 projects */}
       <div className="w-full max-w-7xl md:px-4 py-6 px-10  md:border-red-500 lg:px-10 mx-auto grid gap-6 sm:gap-8 md:gap-10 lg:gap-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
