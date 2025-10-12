@@ -17,7 +17,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
       whileInView="visible"
       variants={animationVariants.fadeInUp}
       transition={{ duration: 0.8, delay: index * 0.1 }}
-      className="package h-full"
+      className="package z-10 h-full"
     >
       <div className="package2 flex flex-col h-full">
         {/* Image Section with Overlay */}

@@ -105,11 +105,11 @@ const AllProjects: React.FC = () => {
       )}
 
       <section className="p-2 py-10 flex-col gap-8 overflow-hidden flex items-center justify-center sm:p-14">
-        <Title title="All Projects - My Development Journey" />
+        <Title title="All Projects: Every mission in my orbit." />
 
         {/* Project Stats */}
         <div className="w-[80%] mx-auto text-center mb-8">
-          <p className="text-slate-400 font-tektur text-lg">
+          <p className="text-slate-400 font-orbitron text-lg">
             These {projectsData.length} projects reflect my passion for learning
             and commitment to web development.
           </p>
@@ -123,7 +123,7 @@ const AllProjects: React.FC = () => {
               <button
                 key={value}
                 onClick={() => setFilter(value)}
-                className={`px-6 py-3 rounded-2xl font-tektur text-sm transition-all duration-300 flex items-center gap-2 ${
+                className={`px-6 py-3 rounded-2xl font-orbitron text-sm transition-all duration-300 flex items-center gap-2 ${
                   filter === value
                     ? "bg-neon-purple text-white shadow-[0_0_15px_rgba(126,45,232,0.5)]"
                     : "bg-slate-800 text-slate-300 hover:bg-slate-700"
@@ -144,8 +144,16 @@ const AllProjects: React.FC = () => {
           })}
         </div>
 
+        {/* 
+
+      <div className="w-full max-w-7xl md:px-4 py-6 px-10  lg:px-10 mx-auto grid gap-6 sm:gap-8 md:gap-10 lg:gap-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        {displayProjects.slice(0, 3).map((project, index) => (
+          <ProjectsCard key={project.id} project={project} index={index} />
+        ))}
+      </div>
+*/}
         {/* Projects Grid - All Projects */}
-        <div className="w-[80%] p-10 mx-auto grid gap-12 md:grid-cols-2 lg:grid-cols-3">
+        <div className="w-full max-w-7xl md:px-4 py-6 px-10  lg:px-10 mx-auto grid gap-6 sm:gap-8 md:gap-10 lg:gap-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {filteredProjects.map((project, index) => (
             <ProjectsCard key={project.id} project={project} index={index} />
           ))}
@@ -153,7 +161,7 @@ const AllProjects: React.FC = () => {
 
         {/* Results Summary */}
         <div className="w-[80%] mx-auto text-center mt-8">
-          <p className="text-slate-400 font-tektur text-sm">
+          <p className="text-slate-400 font-orbitron text-sm">
             Showing {filteredProjects.length} of {projectsData.length} projects
             {filter !== "all" && (
               <span className="text-neon-cyan">

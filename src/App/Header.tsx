@@ -55,11 +55,7 @@ function Header() {
 
   return (
     <header className="fixed z-50 top-0 right-2 left-2">
-      <div
-        className={`px-3 py-2 z-50  flex items-center justify-start lg:justify-center uppercase rounded-xl ${
-          isOpen ? "border-slate-700 " : "border-slate-700"
-        } transition-colors duration-200 font-semibold`}
-      >
+      <div className="px-3 py-2 z-50  flex items-center justify-start lg:justify-center uppercase rounded-xl transition-colors duration-200 font-semibold">
         {/* Hamburger Button */}
         <button
           className={`lg:hidden rounded-lg  border transition duration-200 z-50 p-3 ${
@@ -89,7 +85,7 @@ function Header() {
         </button>
 
         {/* Desktop Navigation */}
-        <div className="hidden z-50 p-2 uppercase rounded-2xl bg-slate-950/80 backdrop-blur-xs border-trail lg:flex md:justify-center items-center justify-center space-x-6">
+        <div className="hidden z-50 p-1 uppercase rounded-2xl bg-slate-950/80 backdrop-blur-xs border-trail lg:flex md:justify-center items-center justify-center space-x-6">
           {/* Logo */}
           <a
             href="/"

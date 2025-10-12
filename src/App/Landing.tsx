@@ -1,116 +1,226 @@
-import * as motion from "motion/react-client";
-import "../styles/grid.css";
-// import SocialIcons from "../components/SocialIcons";
-// import socialLinks from "../utils/socialLinks";
-// interface SocialLink {
-//   Icon: React.ElementType;
-//   link: string;
-//   label: string;
-// }
+import { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
+
 function Landing() {
-  // Memoize the motion components' props to prevent unnecessary recalculations
-  const motionProps = {
-    hello: {
-      initial: { opacity: 0, y: -50 },
-      animate: { opacity: 1, y: 0 },
-      transition: { duration: 1.5, delay: 0.3, ease: "easeOut" },
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const particles: Particle[] = [];
+    const particleCount = 50;
+
+    class Particle {
+      x: number;
+      y: number;
+      size: number;
+      speedX: number;
+      speedY: number;
+      opacity: number;
+
+      constructor() {
+        this.x = Math.random() * canvas!.width;
+        this.y = Math.random() * canvas!.height;
+        this.size = Math.random() * 2 + 1;
+        this.speedX = Math.random() * 0.5 - 0.25;
+        this.speedY = Math.random() * 0.5 - 0.25;
+        this.opacity = Math.random() * 0.5 + 0.2;
+      }
+
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+
+        if (this.x > canvas!.width) this.x = 0;
+        if (this.x < 0) this.x = canvas!.width;
+        if (this.y > canvas!.height) this.y = 0;
+        if (this.y < 0) this.y = canvas!.height;
+      }
+
+      draw() {
+        ctx!.fillStyle = `rgba(0, 255, 255, ${this.opacity})`;
+        ctx!.beginPath();
+        ctx!.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx!.fill();
+      }
+    }
+
+    for (let i = 0; i < particleCount; i++) {
+      particles.push(new Particle());
+    }
+
+    function animate() {
+      ctx!.clearRect(0, 0, canvas!.width, canvas!.height);
+
+      particles.forEach((particle) => {
+        particle.update();
+        particle.draw();
+      });
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+
+    const handleResize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
+      },
     },
-    passionate: {
-      initial: { opacity: 0, y: 50 },
-      animate: { opacity: 1, y: 0 },
-      transition: { duration: 1.5, delay: 0.4, ease: "easeOut" },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
     },
-    webDev: {
-      initial: { opacity: 0, x: -100 },
-      animate: { opacity: 1, x: 0 },
-      transition: { duration: 1.5, delay: 0.4, ease: "easeOut" },
-    },
-    specializing: {
-      initial: { opacity: 0, y: -50 },
-      animate: { opacity: 1, y: 0 },
-      transition: { duration: 1.5, delay: 0.4, ease: "easeOut" },
-    },
-    frontEnd: {
-      initial: { opacity: 0, x: 100 },
-      animate: { opacity: 1, x: 0 },
-      transition: { duration: 1.5, delay: 0.4, ease: "easeOut" },
-    },
-    creating: {
-      initial: { opacity: 0, y: 100 },
-      animate: { opacity: 1, y: 0 },
-      transition: { duration: 1.5, delay: 0.4, ease: "easeOut" },
-    },
-    socialIcons: {
-      initial: { opacity: 0 },
-      animate: { opacity: 1 },
-      transition: { duration: 1.5, delay: 0.8, ease: "easeOut" },
+  };
+
+  const titleVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 1,
+        ease: "easeOut",
+      },
     },
   };
 
   return (
-    <main
-      className="relative z-10 min-h-screen w-full flex items-center justify-center overflow-hidden shadow-lg before:z-50 "
-      // style={{ backgroundImage: 'url("https://i.imgur.com/YvUPGUK.jpg")' }}
-    >
-      {/* gradient glow */}
+    <main className="relative min-h-screen w-full flex flex-col justify-between overflow-hidden bg-gradient-to-br pt-30">
+      {/* glow */}
       <div className="absolute left-2 lg:left-24 top-0 lg:top-20 -translate-x-1/2 transform rounded-full border-[150px] border-b-neon-purple/80 border-l-neon-blue/80 border-r-neon-purple/80 border-t-neon-cyan/60 blur-[240px]" />
-
       <div className="absolute right-2 lg:top-20 lg:-translate-x-32  transform rounded-full border-[200px] xl:border-[150px] xl:border-b-neon-purple/80 xl:border-l-neon-blue/80 xl:border-r-neon-purple/80 xl:border-t-neon-cyan/50 blur-[240px]" />
 
-      {/* Content overlay */}
-      <div className="absolute p-3 z-50 flex flex-col items-center justify-center">
-        <motion.div
-          {...motionProps.passionate}
-          className="text-sm sm:text-xl md:text-2xl font-tektur tracking-widest lg:text-2xl flex flex-col text-slate-100 font-medium items-center lg:items-stretch drop-shadow-[0_0_1px_#242424]"
-        >
-          A
-        </motion.div>
+      {/* Animated Canvas Background */}
+      <canvas
+        ref={canvasRef}
+        className="absolute inset-0 pointer-events-none"
+      />
 
-        <motion.div
-          {...motionProps.webDev}
-          className="text-center py-4 text-4xl font-tektur tracking-widest text-neon-cyan sm:text-6xl drop-shadow-[0_0_5px_#7e2de8] md:text-5xl lg:text-[90px] font-bold"
-        >
-          Software Engineer
-        </motion.div>
+      {/* Gradient Orbs */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-[120px] animate-pulse" />
+      <div
+        className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-[120px] animate-pulse"
+        style={{ animationDelay: "1s" }}
+      />
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[150px]" />
 
-        <motion.div
-          {...motionProps.specializing}
-          className="text-sm font-medium sm:text-xl md:text-2xl font-tektur tracking-widest lg:text-2xl flex flex-col text-slate-100 items-center lg:items-stretch drop-shadow-[0_0_1px_#242424] p-3"
+      {/* Content */}
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="relative z-10 flex-1 flex flex-col justify-center mx-auto px-6 text-center max-w-7xl w-full"
+      >
+        {/* Main Title */}
+        <motion.h1
+          variants={titleVariants}
+          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight font-poppins"
         >
-          Specializing in
-        </motion.div>
+          <span className="block mb-2 text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-300">
+            Software Engineer
+          </span>
+          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan via-blue-500 to-neon-purple font-bold drop-shadow-[0_0_30px_rgba(6,182,212,0.5)]">
+            Crafting Digital
+          </span>
+          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-neon-purple via-blue-500 to-neon-cyan drop-shadow-[0_0_30px_rgba(147,51,234,0.5)]">
+            Experiences
+          </span>
+        </motion.h1>
 
-        <motion.div
-          {...motionProps.frontEnd}
-          className="text-neon-cyan py-4 font-tektur tracking-widest lg:py-3 text-4xl sm:text-6xl md:text-5xl lg:text-[90px] font-bold text-center drop-shadow-[0_0_5px_#7e2de8]"
+        {/* Subtitle */}
+        <motion.p
+          variants={itemVariants}
+          className="text-lg font-poppins sm:text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-6 leading-relaxed"
         >
-          Front-End Development
-        </motion.div>
+          Specializing in{" "}
+          <span className="text-neon-cyan font-semibold">
+            Front-End Development
+          </span>
+        </motion.p>
 
-        <motion.div
-          {...motionProps.creating}
-          className="text-sm font-tektur text-slate-100 font-medium tracking-widest sm:text-base md:text-lg lg:text-xl text-center drop-shadow-[0_0_1px_#242424] mt-4"
+        <motion.p
+          variants={itemVariants}
+          className="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto mb-16 font-poppins"
         >
           Combining technical excellence with user-centric design for impactful
           digital experiences
+        </motion.p>
+
+        {/* CTA Buttons */}
+        <motion.div
+          variants={itemVariants}
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-14 font-poppins"
+        >
+          <button className="group relative px-8 py-4 bg-gradient-to-r from-neon-blue to-neon-purple rounded-xl text-md sm:text-base font-medium text-white shadow-[0_0_30px_rgba(6,182,212,0.4)] hover:shadow-[0_0_50px_rgba(6,182,212,0.6)] transition-all duration-300 hover:scale-105">
+            <span className="relative z-10">View My Work</span>
+            <div className="absolute inset-0 bg-gradient-to-r from-neon-blue to-neon-purple rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          </button>
+
+          <button className="px-8 py-4 bg-transparent border-2 border-cyan-500/50 rounded-xl font-medium text-cyan-400 hover:bg-cyan-500/10 hover:border-cyan-400 transition-all duration-300 hover:scale-105 backdrop-blur-sm text-md sm:text-base">
+            Get In Touch
+          </button>
         </motion.div>
 
-        {/* <motion.div
-          {...motionProps.socialIcons}
-          className="flex mt-5 items-center gap-4 justify-center transition-all duration-300"
+        {/* Scroll Indicator */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 1.5,
+            duration: 1,
+            repeat: Infinity,
+            repeatType: "reverse",
+          }}
+          className="flex flex-col items-center gap-2 text-gray-400"
         >
-          {socialLinks.map(({ Icon, link, label }: SocialLink) => (
-            <SocialIcons
-              styles="hover:bg-slate-800 border border-neon-purple/50  rounded-lg"
-              iconColor="text-neon-cyan"
-              key={label}
-              Icon={Icon}
-              link={link}
-              label={label}
-            />
-          ))}
-        </motion.div> */}
-      </div>
+          <span className="text-sm font-orbitron tracking-wider">
+            Scroll to explore
+          </span>
+          <svg
+            className="w-6 h-6 animate-bounce"
+            fill="none"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          </svg>
+        </motion.div>
+      </motion.div>
+
+      {/* Decorative Grid Lines */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.05)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)]" />
     </main>
   );
 }
