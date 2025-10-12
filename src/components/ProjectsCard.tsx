@@ -33,14 +33,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
         {/* Content Section */}
         <div className="p-2 space-y-4 flex-1 flex flex-col">
           {/* Title */}
-          <h3 className="text-xl font-tektur font-bold bg-gradient-to-r from-neon-cyan to-neon-purple bg-clip-text text-transparent leading-tight">
+          <h3 className="text-sm md:text-md lg:text-lg font-tektur font-bold bg-gradient-to-r from-neon-cyan to-neon-purple bg-clip-text text-transparent leading-tight">
             {project.title}
           </h3>
 
           {/* Description */}
           <p
             title={project.description}
-            className="text-sm text-slate-400 font-poppins leading-relaxed line-clamp-3 flex-shrink-0 cursor-help"
+            className="text-xs md:text-sm text-slate-400 font-poppins leading-relaxed line-clamp-3 flex-shrink-0 cursor-help"
           >
             {project.description}
           </p>
@@ -50,7 +50,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
             {project.technologies.map((tech, idx) => (
               <span
                 key={idx}
-                className="px-3 py-1.5 text-xs font-medium font-tektur bg-slate-900/50 text-cyan-400 rounded-lg border border-slate-800 hover:border-cyan-500/50 hover:bg-slate-900 transition-all flex items-center gap-1.5"
+                className="px-3 py-1 text-xs font-medium font-tektur bg-slate-900/50 text-neon-cyan rounded-lg border border-slate-800 hover:border-cyan-500/50 hover:bg-slate-900 transition-all flex items-center gap-1.5"
               >
                 {tech}
               </span>
@@ -58,7 +58,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
           </div>
 
           {/* Bottom Action Bar */}
-          <div className="flex items-center justify-center gap-8 pt-4 border-t border-slate-800 mt-auto">
+          <div className="flex items-center justify-center gap-8 pt-2 border-t border-slate-800 mt-auto">
             <a
               href={project.githubUrl}
               target="_blank"
@@ -66,7 +66,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
               className="flex flex-col items-center gap-2 text-slate-400 hover:text-cyan-400 transition-all duration-300 group/link"
             >
               <Github
-                size={20}
+                size={17}
                 className="group-hover/link:scale-110 transition-transform"
               />
               <span className="text-xs font-medium">View Code</span>
@@ -79,7 +79,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
                 className="flex flex-col items-center gap-2 text-slate-400 hover:text-cyan-400 transition-all duration-300 group/link"
               >
                 <ExternalLink
-                  size={20}
+                  size={17}
                   className="group-hover/link:scale-110 transition-transform"
                 />
                 <span className="text-xs font-medium">Live Demo</span>

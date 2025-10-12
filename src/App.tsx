@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import Landing from "./App/Landing";
 import About from "./App/About";
 import Skills from "./App/Skills";
@@ -10,32 +15,41 @@ import "./index.css";
 import Header from "./App/Header";
 import StarryBackground from "./components/StarryBackground";
 
+function AppContent() {
+  const location = useLocation();
+  const isProjectsPage = location.pathname === "/projects";
+
+  return (
+    <main className="bg-dark">
+      <StarryBackground>
+        {!isProjectsPage && <Header />}
+        <Routes>
+          {/* Home page with all sections */}
+          <Route
+            path="/"
+            element={
+              <>
+                <Landing />
+                <About />
+                <Skills />
+                <ProjectsPreview />
+                <Certification />
+                <Contact />
+              </>
+            }
+          />
+          {/* Dedicated projects page */}
+          <Route path="/projects" element={<AllProjects />} />
+        </Routes>
+      </StarryBackground>
+    </main>
+  );
+}
+
 function App() {
   return (
     <Router>
-      <main className="bg-dark">
-        <StarryBackground>
-          <Header />
-          <Routes>
-            {/* Home page with all sections */}
-            <Route
-              path="/"
-              element={
-                <>
-                  <Landing />
-                  <About />
-                  <Skills />
-                  <ProjectsPreview />
-                  <Certification />
-                  <Contact />
-                </>
-              }
-            />
-            {/* Dedicated projects page */}
-            <Route path="/projects" element={<AllProjects />} />
-          </Routes>
-        </StarryBackground>
-      </main>
+      <AppContent />
     </Router>
   );
 }

@@ -12,9 +12,10 @@ export interface Project {
     | "web"
     | "mobile"
     | "fullstack"
+    | "desktop"
     | "Frontend"
     | "Backend"
-    | ("web" | "mobile" | "fullstack" | "Frontend" | "Backend")[];
+    | ("web" | "mobile" | "fullstack" | "desktop" | "Frontend" | "Backend")[];
 }
 
 export const projectsData: Project[] = [
@@ -66,6 +67,21 @@ export const projectsData: Project[] = [
     featured: true,
     category: "fullstack",
   },
+  // casa vista - hotel reservation
+  {
+    id: "9",
+    title: "Casa Vista – Hotel Reservation System",
+    description:
+      "A full-featured web-based hotel booking system built with PHP and XAMPP that allows users to browse rooms, make reservations, and manage bookings online. The system includes both customer and admin dashboards for handling room availability, user feedback, and booking records. Designed with a clean, responsive UI and integrated with a MySQL database for real-time data management.",
+    technologies: ["PHP", "MySQL", "HTML", "CSS", "JavaScript", "XAMPP"],
+    liveUrl: "",
+    githubUrl:
+      "https://github.com/Adrian9502/casa-vista-hotel-reservation-system",
+    imageUrl:
+      "https://github.com/Adrian9502/casa-vista-hotel-reservation-system/blob/main/img-thumb/1.png?raw=true",
+    featured: true,
+    category: ["web", "fullstack"],
+  },
   // MERN Advanced Auth System
   {
     id: "3",
@@ -77,8 +93,8 @@ export const projectsData: Project[] = [
     githubUrl: "https://github.com/Adrian9502/mern-advance-auth-system",
     imageUrl:
       "https://github.com/Adrian9502/mern-advance-auth-system/blob/main/preview/login.png?raw=true",
-    featured: true,
-    category: "fullstack",
+    featured: false,
+    category: ["web", "fullstack"],
   },
   // MERN Blog App
   {
@@ -92,7 +108,7 @@ export const projectsData: Project[] = [
     imageUrl:
       "https://github.com/Adrian9502/mern-blog-app-with-tailwind/blob/main/mern.png?raw=true",
     featured: true,
-    category: "fullstack",
+    category: ["web", "fullstack"],
   },
   // Arise
   {
@@ -122,7 +138,7 @@ export const projectsData: Project[] = [
     featured: true,
     category: "web",
   },
-  // Alutron - new
+  // ALUtron
   {
     id: "7",
     title: "4-Bit ALU Simulator – Visual Arithmetic Logic Unit",
@@ -135,9 +151,90 @@ export const projectsData: Project[] = [
     featured: false,
     category: "web",
   },
-  // BakeMart
+  // Lazada clone ui
   {
     id: "8",
+    title: "Lazada Mobile UI Clone – React Native E-Commerce Layout",
+    description:
+      "A React Native project that replicates the core UI design of the Lazada Mobile App. It includes five fully functional screens—Home, Like, Message, Cart, and Account—demonstrating a modern mobile shopping experience. Each screen showcases product displays, interactive navigation, and reusable styled components built with NativeWind for a clean, responsive interface.",
+    technologies: ["React Native", "TypeScript", "NativeWind"],
+    liveUrl: "",
+    githubUrl: "https://github.com/Adrian9502/react-native-lazada-ui-clone",
+    imageUrl:
+      "https://github.com/Adrian9502/react-native-lazada-ui-clone/raw/main/overview.png",
+    featured: false,
+    category: "mobile",
+  },
+
+  // RN todo list
+  {
+    id: "10",
+    title: "Todo List (React Native)",
+    description:
+      "A minimalist task management app built with React Native that lets users create, view, update, and delete tasks. It uses AsyncStorage for persistent local data storage, ensuring tasks remain saved even after app restarts. The interface features clean icons and intuitive controls for managing daily to-dos efficiently on mobile devices.",
+    technologies: ["React Native", "React", "AsyncStorage"],
+    liveUrl: "",
+    githubUrl: "https://github.com/Adrian9502/react-native-todo-list",
+    imageUrl:
+      "https://github.com/Adrian9502/react-native-todo-list/blob/main/Untitled.png?raw=true",
+    featured: false,
+    category: "mobile",
+  },
+  // portfolio 2024
+  {
+    id: "11",
+    title: "Portfolio 2024 (React + Tailwind)",
+    description:
+      "A personal portfolio website built with React and Tailwind CSS to showcase projects, skills, and achievements. Designed with responsive layouts, smooth Framer Motion animations, and a clean UI that adapts seamlessly across devices. The site includes links to GitHub, LinkedIn, and other profiles for easy access to my work and background.",
+    technologies: [
+      "React",
+      "Tailwind CSS",
+      "Vite",
+      "Framer Motion",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Git",
+    ],
+    liveUrl: "https://johnadrianbonto.vercel.app/",
+    githubUrl: "https://github.com/Adrian9502/react-portfolio-2024",
+    imageUrl:
+      "https://github.com/Adrian9502/react-portfolio-2024/blob/main/image.png?raw=true",
+    featured: true,
+    category: "web",
+  },
+  // DESKTOP APPS
+  {
+    id: "12",
+    title: "Inventory System (Java – Silog Express)",
+    description:
+      "A desktop-based inventory management application developed with Java and NetBeans GUI. It supports full CRUD (Create, Read, Update, Delete) operations for managing product records and integrates with a MySQL database for reliable data storage. The system was built for Silog Express and includes an injector setup for smooth database connectivity.",
+    technologies: ["Java", "NetBeans", "MySQL"],
+    liveUrl: "",
+    githubUrl:
+      "https://github.com/Adrian9502/Inventory-System-in-Java-GUI-w-MySQL-Database-",
+    imageUrl:
+      "https://github.com/Adrian9502/Inventory-System-in-Java-GUI-w-MySQL-Database-/raw/main/img-thumb/2.png",
+    featured: false,
+    category: ["desktop", "fullstack"],
+  },
+  {
+    id: "13",
+    title: "Riven Express Logistic (Java NetBeans)",
+    description:
+      "A simple warehouse inventory management system developed in Java using NetBeans 17. Built during first-year college, it uses ArrayList to manage stock data without relying on a database. The system supports core CRUD (Create, Read, Update, Delete) operations for tracking and updating raw material inventory efficiently in a local environment.",
+    technologies: ["Java", "NetBeans", "ArrayList"],
+    liveUrl: "",
+    githubUrl:
+      "https://github.com/Adrian9502/Inventory-System-without-database",
+    imageUrl:
+      "https://github.com/Adrian9502/Inventory-System-without-database/raw/main/img-thumb/2.png",
+    featured: false,
+    category: "desktop",
+  },
+  // BakeMart
+  {
+    id: "14",
     title: "BakeMart – Café and Bakery Website",
     description:
       "A front-end website UI for a café and bakery, built with React and Tailwind CSS as part of a Graphic Design subject.",
@@ -151,7 +248,7 @@ export const projectsData: Project[] = [
   },
   // Chef Bytes v2
   {
-    id: "9",
+    id: "15",
     title: "Chef Bytes – Recipe App (v2)",
     description:
       "A recipe application that lets users search recipes instantly, view ingredients, and manage favorite recipes in real time.",
@@ -165,12 +262,12 @@ export const projectsData: Project[] = [
   },
   // Taste Bites
   {
-    id: "10",
+    id: "16",
     title: "Taste Bites – Recipe App (v1)",
     description:
       "A React application that uses an external API to display recipes by category or region. Designed with Bootstrap and Hero Patterns.",
     technologies: ["React", "Bootstrap"],
-    liveUrl: "https://react-recipe-app-with-api-vercel.vercel.app",
+    liveUrl: "https://tastebitesrecipes.vercel.app/",
     githubUrl: "https://github.com/Adrian9502/react-recipe-app-with-api",
     imageUrl:
       "https://github.com/Adrian9502/react-recipe-app-with-api/blob/main/thumb1.png?raw=true",
@@ -179,7 +276,7 @@ export const projectsData: Project[] = [
   },
   // Algorithm Quiz Game
   {
-    id: "11",
+    id: "17",
     title: "Algorithm Quiz Game",
     description:
       "A prototype quiz game developed for Software Engineering 1 to help students understand how algorithms and binary operations work.",
@@ -193,7 +290,7 @@ export const projectsData: Project[] = [
   },
   // Portfolio Template - Glitch
   {
-    id: "12",
+    id: "18",
     title: "Portfolio Template – Glitch",
     description:
       "A mini portfolio project with a purple glitch-themed interface, flicker animations, and a custom glowing cursor.",
@@ -208,7 +305,7 @@ export const projectsData: Project[] = [
   },
   // Datkilab
   {
-    id: "13",
+    id: "19",
     title: "Datkilab – Reverse Your Words",
     description:
       "A fun web app that reverses any text input, letting users playfully confuse their friends and group chats.",
@@ -222,7 +319,7 @@ export const projectsData: Project[] = [
   },
   // YouTube Clone
   {
-    id: "14",
+    id: "20",
     title: "YouTube Clone (React)",
     description:
       "A YouTube-like app built with React and Tailwind CSS that lets users search, browse, and watch videos using a public API.",
@@ -236,7 +333,7 @@ export const projectsData: Project[] = [
   },
   // Facebook Clone
   {
-    id: "15",
+    id: "21",
     title: "Facebook Clone (React)",
     description:
       "A React and Tailwind CSS project replicating Facebook's layout, including a header, sidebar, main feed, and contacts section.",
@@ -250,7 +347,7 @@ export const projectsData: Project[] = [
   },
   // Expense Tracker
   {
-    id: "16",
+    id: "22",
     title: "Expense Tracker",
     description:
       "A React app that tracks income and expenses in real time, visualized through charts and transaction lists.",
@@ -266,7 +363,7 @@ export const projectsData: Project[] = [
   },
   // React 20 Exercises
   {
-    id: "17",
+    id: "23",
     title: "React 20 Exercises App",
     description:
       "A collection of 20 mini React exercises demonstrating various React concepts, hooks, and state management techniques.",
@@ -280,7 +377,7 @@ export const projectsData: Project[] = [
   },
   // To-Do List (React)
   {
-    id: "18",
+    id: "24",
     title: "To-Do List (React)",
     description:
       "A simple to-do list app built with React + Vite and Bootstrap, focused on mastering useState and component reactivity.",
@@ -294,7 +391,7 @@ export const projectsData: Project[] = [
   },
   // Weather App (React)
   {
-    id: "19",
+    id: "25",
     title: "Weather App (React)",
     description:
       "A weather app built with React and the OpenWeather API that displays real-time weather data for cities worldwide.",
@@ -308,7 +405,7 @@ export const projectsData: Project[] = [
   },
   // Color Picker App
   {
-    id: "20",
+    id: "26",
     title: "Color Picker App",
     description:
       "A simple React app that allows users to select, view, and explore color combinations, emphasizing useState and component updates.",
@@ -322,7 +419,7 @@ export const projectsData: Project[] = [
   },
   // Digital Clock and Date
   {
-    id: "21",
+    id: "27",
     title: "Digital Clock and Date",
     description:
       "A digital clock and date app built with JavaScript and the Day.js library for accurate time formatting.",
@@ -336,7 +433,7 @@ export const projectsData: Project[] = [
   },
   // YouTube Clone (HTML/CSS)
   {
-    id: "22",
+    id: "28",
     title: "YouTube Clone (HTML/CSS)",
     description:
       "A static front-end clone of YouTube built through a 6-hour HTML and CSS course, designed to reinforce layout and styling fundamentals.",
@@ -350,7 +447,7 @@ export const projectsData: Project[] = [
   },
   // Weather App (JavaScript)
   {
-    id: "23",
+    id: "29",
     title: "Weather App (JavaScript)",
     description:
       "A vanilla JavaScript weather app that fetches real-time weather data from an API, reinforcing the use of Fetch and async/await.",
@@ -364,7 +461,7 @@ export const projectsData: Project[] = [
   },
   // To-Do List (JavaScript)
   {
-    id: "24",
+    id: "30",
     title: "To-Do List (JavaScript)",
     description:
       "A basic JavaScript to-do list app that helps users manage daily tasks efficiently.",
@@ -378,12 +475,12 @@ export const projectsData: Project[] = [
   },
   // Snake Game (JavaScript)
   {
-    id: "25",
+    id: "31",
     title: "Snake Game (JavaScript)",
     description:
       "A simple classic Snake game built using HTML, CSS, and JavaScript.",
     technologies: ["HTML", "CSS", "JavaScript"],
-    liveUrl: "https://js-quiz-game-pixel-theme.vercel.app",
+    liveUrl: "https://js-snake-game-eta.vercel.app/",
     githubUrl: "https://github.com/Adrian9502/JS-Snake-Game",
     imageUrl:
       "https://github.com/Adrian9502/JS-Snake-Game/blob/main/image_2024-09-01_213726063.png?raw=true",
@@ -392,7 +489,7 @@ export const projectsData: Project[] = [
   },
   // Rock-Paper-Scissors (JavaScript)
   {
-    id: "26",
+    id: "32",
     title: "Rock-Paper-Scissors (JavaScript)",
     description:
       "A lightweight web game built with JavaScript for quick and fun interaction.",
@@ -406,7 +503,7 @@ export const projectsData: Project[] = [
   },
   // Amazon Clone (JavaScript)
   {
-    id: "27",
+    id: "33",
     title: "Amazon Clone (JavaScript)",
     description:
       "An Amazon-style e-commerce clone built with vanilla JavaScript and the Fetch API, applying async/await, promises, and URL parameter concepts.",

@@ -26,6 +26,8 @@ const ProjectsPreview: React.FC = () => {
         ];
 
   const handleViewAll = () => {
+    // Save current scroll position before navigating
+    sessionStorage.setItem("homeScrollPosition", window.scrollY.toString());
     navigate("/projects");
   };
 
