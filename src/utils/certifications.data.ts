@@ -3,12 +3,12 @@ import certificate2 from "/certificates/assets/IntroductionToCareerSkillsInSoftw
 import certificate3 from "/certificates/assets/ProgrammingFoundationsBeyondTheFundamentals.png";
 import certificate4 from "/certificates/assets/ProgrammingFoundationsFundamentals.png";
 // coursera
-import certificate5 from "/certificates/assets/CourseraIntroductionToAI.jpeg";
-import certificate6 from "/certificates/assets/Foundation of User Experience (UX) Design.jpeg";
-import certificate7 from "/certificates/assets/Start the UX Design Process Empathize Define and Ideate.jpeg";
-import certificate8 from "/certificates/assets/Use AI Responsibly.jpeg";
-import certificate9 from "/certificates/assets/Maximize Productivity With AI Tools.jpeg";
-import certificate10 from "/certificates/assets/Discover the Art of Prompting.jpeg";
+import certificate5 from "/certificates/assets/CourseraIntroductionToAI.png";
+import certificate6 from "/certificates/assets/Foundation of User Experience (UX) Design.png";
+import certificate7 from "/certificates/assets/Start the UX Design Process Empathize Define and Ideate.png";
+import certificate8 from "/certificates/assets/Use AI Responsibly.png";
+import certificate9 from "/certificates/assets/Maximize Productivity With AI Tools.png";
+import certificate10 from "/certificates/assets/Discover the Art of Prompting.png";
 
 export interface Certification {
   id: string;

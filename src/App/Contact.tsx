@@ -56,9 +56,12 @@ const Contact: React.FC = () => {
               Get In Touch
             </h3>
             <p className="text-slate-300 font-tektur text-lg leading-relaxed">
-              I'm always open to discussing new opportunities, interesting
+              {/* I'm always open to discussing new opportunities, interesting
               projects, or just having a chat about web development. Feel free
-              to reach out!
+              to reach out! */}
+              I'm always open to new missions, collaborations, or just chatting
+              about building things that go beyond the ordinary. Let’s connect
+              and launch ideas together.
             </p>
           </div>
 
