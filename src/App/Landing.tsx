@@ -114,11 +114,7 @@ function Landing() {
   };
 
   return (
-    <main className="relative min-h-screen w-full flex flex-col justify-between overflow-hidden bg-gradient-to-br pt-30">
-      {/* glow */}
-      <div className="absolute left-2 lg:left-24 top-0 lg:top-20 -translate-x-1/2 transform rounded-full border-[150px] border-b-neon-purple/80 border-l-neon-blue/80 border-r-neon-purple/80 border-t-neon-cyan/60 blur-[240px]" />
-      <div className="absolute right-2 lg:top-20 lg:-translate-x-32  transform rounded-full border-[200px] xl:border-[150px] xl:border-b-neon-purple/80 xl:border-l-neon-blue/80 xl:border-r-neon-purple/80 xl:border-t-neon-cyan/50 blur-[240px]" />
-
+    <main className="relative min-h-screen w-full flex flex-col justify-between overflow-hidden bg-gradient-to-br pt-20 lg:pt-50">
       {/* Animated Canvas Background */}
       <canvas
         ref={canvasRef}
@@ -169,7 +165,7 @@ function Landing() {
 
         <motion.p
           variants={itemVariants}
-          className="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto mb-16 font-poppins"
+          className="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto mb-8 font-poppins"
         >
           Combining technical excellence with user-centric design for impactful
           digital experiences
@@ -178,15 +174,48 @@ function Landing() {
         {/* CTA Buttons */}
         <motion.div
           variants={itemVariants}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-14 font-poppins"
+          className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-14 font-poppins"
         >
-          <button className="group relative px-8 py-4 bg-gradient-to-r from-neon-blue to-neon-purple rounded-xl text-md sm:text-base font-medium text-white shadow-[0_0_30px_rgba(6,182,212,0.4)] hover:shadow-[0_0_50px_rgba(6,182,212,0.6)] transition-all duration-300 hover:scale-105">
-            <span className="relative z-10">View My Work</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-neon-blue to-neon-purple rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <button className="group relative px-8 py-4 bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 rounded-lg text-md sm:text-base font-semibold text-white overflow-hidden transition-all duration-500 hover:scale-105 ">
+            <span className="relative z-10 flex items-center gap-2">
+              View My Work
+              <svg
+                className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M13 7l5 5m0 0l-5 5m5-5H6"
+                />
+              </svg>
+            </span>
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-lg blur opacity-30 group-hover:opacity-60 transition duration-500" />
           </button>
 
-          <button className="px-8 py-4 bg-transparent border-2 border-cyan-500/50 rounded-xl font-medium text-cyan-400 hover:bg-cyan-500/10 hover:border-cyan-400 transition-all duration-300 hover:scale-105 backdrop-blur-sm text-md sm:text-base">
-            Get In Touch
+          <button className="group relative px-8 py-4 bg-slate-900/50 border border-cyan-400/30 rounded-lg font-semibold text-cyan-300 backdrop-blur-sm text-md sm:text-base overflow-hidden transition-all duration-500 hover:scale-105">
+            <span className="relative z-10 flex items-center gap-2">
+              Get In Touch
+              <svg
+                className="w-5 h-5 transition-transform duration-300 group-hover:rotate-12"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                />
+              </svg>
+            </span>
+            <div className="absolute inset-0 border border-cyan-400/50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           </button>
         </motion.div>
 
