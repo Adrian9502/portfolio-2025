@@ -22,7 +22,7 @@ const Card: React.FC<CardProps> = ({
       variants={animationVariants.fadeInUp}
       transition={{ duration: 0.8, delay }}
       whileHover={hoverable ? "hover" : undefined}
-      className={`border-2 box p-4 md:p-5 rounded-2xl ${className}`}
+      className={`border-2 z-10 box p-4 md:p-5 rounded-2xl ${className}`}
     >
       {children}
     </motion.div>

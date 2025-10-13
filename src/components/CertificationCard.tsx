@@ -14,46 +14,39 @@ const CertificationCard: React.FC<CertificationCardProps> = ({
 }) => {
   return (
     <Card delay={index * 0.1} hoverable>
-      <div className="flex items-start gap-4">
+      <div className="flex flex-col w-full items-start gap-4">
         <img
           src={certification.imageUrl}
           alt={certification.issuer}
-          className="w-16 h-16 rounded-lg object-cover"
+          className="w-full pointer-events-none rounded-md h-40 object-contain lg:object-cover"
         />
 
-        <div className="flex-1 space-y-2">
-          <h3 className="font-tektur font-medium text-lg bg-gradient-to-r from-neon-cyan to-neon-purple bg-clip-text text-transparent">
+        <div className="flex-1 space-y-3">
+          <h3 className="font-tektur font-medium text-sm md:text-md lg:text-base bg-gradient-to-r from-neon-cyan to-neon-purple bg-clip-text text-transparent line-clamp-2">
             {certification.title}
           </h3>
 
-          <p className="text-slate-300 font-tektur text-sm">
-            {certification.issuer}
+          <p className="text-slate-300 italic font-poppins text-xs">
+            issued by {certification.issuer}
           </p>
 
-          <div className="flex items-center gap-2 text-xs text-slate-400">
+          <div className="flex items-center font-poppins gap-2 text-xs text-slate-400">
             <Calendar size={14} />
             {certification.date}
           </div>
-
-          <div className="flex flex-wrap gap-1">
-            {certification.skills.map((skill) => (
-              <span
-                key={skill}
-                className="px-2 py-1 text-xs bg-slate-800 text-neon-cyan rounded-md"
-              >
-                {skill}
-              </span>
-            ))}
-          </div>
-
+        </div>
+        <div className="flex items-center w-full justify-center  border-t border-slate-800 ">
           {certification.credentialUrl && (
             <a
               href={certification.credentialUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-sm text-slate-300 hover:text-neon-cyan transition-colors mt-2"
+              className="inline-flex items-center gap-1 text-sm text-slate-300  hover:text-cyan-400 transition-all duration-300 group/link rounded-lg mt-2 p-1"
             >
-              <ExternalLink size={14} />
+              <ExternalLink
+                className="group-hover/link:scale-110 transition-transform"
+                size={14}
+              />
               View Credential
             </a>
           )}

@@ -12,7 +12,7 @@ const Certification: React.FC = () => {
       <Title title="Milestones that mark my growth" />
 
       {/* Certifications Grid */}
-      <div className="w-[80%] mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-2">
+      <div className="w-[80%] mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
         {certificationsData.map((certification, index) => (
           <CertificationCard
             key={certification.id}
