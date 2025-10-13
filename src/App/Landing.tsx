@@ -176,7 +176,7 @@ function Landing() {
           variants={itemVariants}
           className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-14 font-poppins"
         >
-          <button className="group relative px-8 py-4 bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 rounded-lg text-md sm:text-base font-semibold text-white overflow-hidden transition-all duration-500 hover:scale-105 ">
+          <button className="group relative px-8 py-4 bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 rounded-lg text-md sm:text-base font-medium text-white overflow-hidden transition-all duration-500 hover:scale-105 ">
             <span className="relative z-10 flex items-center gap-2">
               View My Work
               <svg
@@ -197,7 +197,7 @@ function Landing() {
             <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-lg blur opacity-30 group-hover:opacity-60 transition duration-500" />
           </button>
 
-          <button className="group relative px-8 py-4 bg-slate-900/50 border border-cyan-400/30 rounded-lg font-semibold text-cyan-300 backdrop-blur-sm text-md sm:text-base overflow-hidden transition-all duration-500 hover:scale-105">
+          <button className="group relative px-8 py-4 bg-slate-900/50 border border-cyan-400/30 rounded-lg font-medium text-cyan-300 backdrop-blur-sm text-md sm:text-base overflow-hidden transition-all duration-500 hover:scale-105">
             <span className="relative z-10 flex items-center gap-2">
               Get In Touch
               <svg
@@ -249,7 +249,7 @@ function Landing() {
       </motion.div>
 
       {/* Decorative Grid Lines */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.05)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.1)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)]" />
     </main>
   );
 }
