@@ -105,7 +105,7 @@ const AllProjects: React.FC = () => {
       )}
 
       <section className="p-2 py-10 flex-col gap-8 overflow-hidden flex items-center justify-center sm:p-14">
-        <Title title="All Projects: Every mission in my orbit." />
+        <Title title="All Projects: Every mission in my orbit" />
 
         {/* Project Stats */}
         <div className="w-[80%] mx-auto text-center mb-8">
