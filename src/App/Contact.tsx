@@ -1,7 +1,7 @@
 import React from "react";
 import Title from "../components/Title";
 import ContactForm from "../components/ContactForm";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import SocialIcons from "../components/SocialIcons";
 import socialLinks from "../utils/socialLinks";
 import * as motion from "motion/react-client";
@@ -26,12 +26,6 @@ const Contact: React.FC = () => {
       label: "Location",
       value: "Philippines",
       href: null,
-    },
-    {
-      icon: Phone,
-      label: "Phone",
-      value: "+63 XXX XXX XXXX",
-      href: "tel:+63XXXXXXXXX",
     },
   ];
 
