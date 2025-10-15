@@ -11,7 +11,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   const location = useLocation();
   const isProjectsPage = location.pathname === ROUTES.PROJECTS;
   const isCertificationsPage = location.pathname === ROUTES.CERTIFICATIONS;
-  const isNotFoundPage = location.pathname === ROUTES.CERTIFICATIONS;
+  const isNotFoundPage = location.pathname === ROUTES.NOTFOUND;
   return (
     <main className="bg-dark relative">
       <BrowserView>
@@ -20,7 +20,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
       <StarryBackground>
         <LandingAndFooterGlow />
-        {!isProjectsPage && !isCertificationsPage && isNotFoundPage && (
+        {!isProjectsPage && !isCertificationsPage && !isNotFoundPage && (
           <Header />
         )}
         {children}
