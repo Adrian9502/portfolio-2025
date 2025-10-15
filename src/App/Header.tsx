@@ -15,7 +15,8 @@ function Header() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [isOpen, setIsOpen] = useState(false);
   const mobileMenuRef = useRef(null);
-  const menuItemsRef = useRef<(HTMLAnchorElement | null)[]>([]);
+  // Change this line - use HTMLButtonElement instead of HTMLAnchorElement
+  const menuItemsRef = useRef<(HTMLButtonElement | null)[]>([]);
 
   useEffect(() => {
     if (isOpen && mobileMenuRef.current) {
@@ -45,7 +46,26 @@ function Header() {
       });
     }
   }, [isOpen]);
-  // function for blurring the not selected nav link
+
+  // Smooth scroll function
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const headerOffset = 80; // Height of your header
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition =
+        elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+    // Close mobile menu after click
+    setIsOpen(false);
+  };
+
+  // Function for blurring the not selected nav link
   const getBlurClass = (index: number): string => {
     if (hoveredIndex === null) return "";
     return hoveredIndex !== index
@@ -96,10 +116,10 @@ function Header() {
 
           {/* Navigation Links */}
           <div className="px-3 flex space-x-2">
-            {navLinks.map(({ href, label }, index) => (
-              <a
-                key={href}
-                href={href}
+            {navLinks.map(({ id, label }, index) => (
+              <button
+                key={id}
+                onClick={() => scrollToSection(id)}
                 className={`px-2 py-1 text-gray-100 text-sm cursor-pointer font-orbitron transition-all duration-200 ${getBlurClass(
                   index
                 )}`}
@@ -107,7 +127,7 @@ function Header() {
                 onMouseLeave={() => setHoveredIndex(null)}
               >
                 {label}
-              </a>
+              </button>
             ))}
           </div>
 
@@ -141,6 +161,7 @@ function Header() {
                   className="w-7 h-7 drop-shadow-[0_0_3px_#2f46fa]"
                 />
               </a>
+
               {socialLinks.map(({ Icon, link, label }: SocialLink) => (
                 <SocialIcons
                   styles="hover:bg-blue-800/70 bg-blue-700/20 rounded-sm"
@@ -153,17 +174,17 @@ function Header() {
               ))}
             </div>
             <div className="flex flex-col items-center p-4">
-              {navLinks.map(({ href, label }, index) => (
-                <a
-                  href={href}
-                  key={href}
+              {navLinks.map(({ id, label }, index) => (
+                <button
+                  key={id}
+                  onClick={() => scrollToSection(id)}
                   ref={(el) => {
                     menuItemsRef.current[index] = el;
                   }}
                   className="p-2 w-full text-center text-white border-b border-white/30 text-sm font-orbitron hover:bg-white/10 transition-colors"
                 >
                   {label}
-                </a>
+                </button>
               ))}
             </div>
           </div>
