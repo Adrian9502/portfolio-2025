@@ -2,12 +2,11 @@ import React from "react";
 import * as motion from "motion/react-client";
 import Title from "../components/Title";
 import "../styles/glitch.css";
-// import Laptop from "../components/3D/Laptop";
 import Code from "../components/Code";
-// Define the animation variants
+
 const fadeInUp = {
-  hidden: { opacity: 0, y: 20 }, // Start slightly below and transparent
-  visible: { opacity: 1, y: 0 }, // Animate to original position
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
 };
 
 function About() {
@@ -17,26 +16,50 @@ function About() {
   return (
     <section
       id="About"
-      className="flex shadow-lg items-center flex-col sm:p-14 py-10 "
+      className="flex shadow-lg items-center flex-col sm:p-14 py-10 relative"
     >
-      {/* Title Component */}
+      {/* Add floating particles ONLY */}
+      <motion.div
+        className="absolute top-20 left-10 w-2 h-2 bg-neon-cyan rounded-full shadow-[0_0_10px_2px_#06b6d4]"
+        animate={{
+          y: [0, -15, 0],
+          opacity: [0.5, 1, 0.5],
+        }}
+        transition={{
+          duration: 4,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
+      <motion.div
+        className="absolute bottom-20 right-10 w-3 h-3 bg-neon-purple rounded-full shadow-[0_0_15px_2px_#7e2de8]"
+        animate={{
+          y: [0, 15, 0],
+          opacity: [0.6, 1, 0.6],
+        }}
+        transition={{
+          duration: 5,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 1,
+        }}
+      />
+
       <Title title={"Driven by curiosity, grounded in code."} />
 
       <div className="flex w-full sm:w-[80%] flex-col z-10 2xl:flex-row pointer-events-auto items-center gap-2 justify-around mt-10">
-        {/* Left: Text Section */}
         <div className="p-10 z-50 text-center flex-1">
-          {/* Animate the name */}
           <motion.div
             ref={nameRef}
             initial="hidden"
             animate="visible"
             variants={fadeInUp}
-            transition={{ duration: 0.8, delay: 0.2 }} // Delay for the name
+            transition={{ duration: 0.8, delay: 0.2 }}
             className="flex items-end mb-4"
           >
             <span className="font-poppins text-slate-200 text-lg md:text-xl">
               Hello! 👋 I'm
-            </span>{" "}
+            </span>
             <span
               data-text="nhoJ nairdA otnoB"
               className="ml-2 overflow-hidden hero glitch layers text-transparent bg-clip-text bg-gradient-to-r to-neon-purple from-neon-cyan  font-poppins text-2xl lg:text-3xl font-semibold"
@@ -45,7 +68,6 @@ function About() {
             </span>
           </motion.div>
 
-          {/* Animate the description */}
           <motion.div
             ref={descriptionRef}
             initial="hidden"
@@ -54,8 +76,11 @@ function About() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-md  font-poppins text-slate-400 text-start"
           >
+            {/* Keep existing content exactly as is */}
             I'm a{" "}
-            <span className="font-bold text-slate-300">Software Engineer</span>{" "}
+            <span className="font-bold text-slate-300">
+              Software Engineer
+            </span>{" "}
             with an unconventional path to code. After nearly two years working
             production at{" "}
             <span className="font-bold text-slate-300">

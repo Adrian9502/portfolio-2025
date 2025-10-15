@@ -5,7 +5,7 @@ import { Mail, MapPin } from "lucide-react";
 import SocialIcons from "../components/SocialIcons";
 import socialLinks from "../utils/socialLinks";
 import * as motion from "motion/react-client";
-import { animationVariants } from "../utils/animations";
+import { staggerContainer, slideInLeft } from "../../utils/spaceAnimations";
 
 interface SocialLink {
   Icon: React.ElementType;
@@ -32,29 +32,53 @@ const Contact: React.FC = () => {
   return (
     <section
       id="Contact"
-      className="p-2 mt-10 py-10 flex-col gap-8 overflow-hidden flex items-center justify-center sm:p-14 mb-32 "
+      className="p-2 mt-10 py-10 flex-col gap-8 overflow-hidden flex items-center justify-center sm:p-14 mb-32 relative"
     >
-      <Title title="Let’s collaborate and build something stellar" />
+      {/* Add floating particles */}
+      <motion.div
+        className="absolute top-20 left-10 w-2 h-2 bg-neon-cyan rounded-full shadow-[0_0_10px_2px_#06b6d4]"
+        animate={{
+          y: [0, -15, 0],
+          opacity: [0.5, 1, 0.5],
+        }}
+        transition={{
+          duration: 4,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
+      <motion.div
+        className="absolute bottom-20 right-10 w-3 h-3 bg-neon-purple rounded-full shadow-[0_0_15px_2px_#7e2de8]"
+        animate={{
+          y: [0, 15, 0],
+          opacity: [0.6, 1, 0.6],
+        }}
+        transition={{
+          duration: 5,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 1,
+        }}
+      />
 
-      <div className="w-[80%] mx-auto grid gap-8 lg:grid-cols-2">
+      <Title title="Let's collaborate and build something stellar" />
+
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="w-[80%] mx-auto grid gap-8 lg:grid-cols-2"
+      >
         {/* Contact Information */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          variants={animationVariants.fadeInUp}
-          transition={{ duration: 0.8, delay: 0.1 }}
-          className="space-y-6"
-        >
+        <motion.div variants={slideInLeft} className="space-y-6">
           <div>
             <h3 className="text-2xl font-tektur font-medium bg-gradient-to-r from-neon-cyan to-neon-purple bg-clip-text text-transparent mb-4">
               Get In Touch
             </h3>
             <p className="text-slate-300 font-tektur text-lg leading-relaxed">
-              {/* I'm always open to discussing new opportunities, interesting
-              projects, or just having a chat about web development. Feel free
-              to reach out! */}
               I'm always open to new missions, collaborations, or just chatting
-              about building things that go beyond the ordinary. Let’s connect
+              about building things that go beyond the ordinary. Let's connect
               and launch ideas together.
             </p>
           </div>
@@ -64,15 +88,23 @@ const Contact: React.FC = () => {
             {contactInfo.map(({ icon: Icon, label, value, href }, index) => (
               <motion.div
                 key={label}
-                initial="hidden"
-                whileInView="visible"
-                variants={animationVariants.fadeInUp}
-                transition={{ duration: 0.8, delay: 0.2 + index * 0.1 }}
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 + index * 0.1 }}
+                whileHover={{ x: 10, transition: { duration: 0.2 } }}
                 className="flex items-center gap-4"
               >
-                <div className="w-12 h-12 bg-slate-800 rounded-lg flex items-center justify-center">
+                <motion.div
+                  className="w-12 h-12 bg-slate-800 rounded-lg flex items-center justify-center"
+                  whileHover={{
+                    scale: 1.1,
+                    boxShadow: "0 0 20px rgba(6, 182, 212, 0.5)",
+                  }}
+                  transition={{ duration: 0.2 }}
+                >
                   <Icon className="text-neon-cyan" size={20} />
-                </div>
+                </motion.div>
                 <div>
                   <p className="text-slate-400 text-sm font-tektur">{label}</p>
                   {href ? (
@@ -92,33 +124,44 @@ const Contact: React.FC = () => {
 
           {/* Social Links */}
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            variants={animationVariants.fadeInUp}
-            transition={{ duration: 0.8, delay: 0.5 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
             className="pt-6"
           >
             <p className="text-slate-300 font-tektur mb-4">Follow me on:</p>
             <div className="flex gap-4">
-              {socialLinks.map(({ Icon, link, label }: SocialLink) => (
-                <SocialIcons
+              {socialLinks.map(({ Icon, link, label }: SocialLink, index) => (
+                <motion.div
                   key={label}
-                  styles="hover:bg-slate-700 bg-slate-800 rounded-lg p-3"
-                  iconColor="text-neon-cyan hover:text-white"
-                  Icon={Icon}
-                  link={link}
-                  label={label}
-                />
+                  initial={{ opacity: 0, scale: 0 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.3,
+                    delay: 0.4 + index * 0.05,
+                    type: "spring",
+                  }}
+                >
+                  <SocialIcons
+                    styles="hover:bg-slate-700 bg-slate-800 rounded-lg p-3"
+                    iconColor="text-neon-cyan hover:text-white"
+                    Icon={Icon}
+                    link={link}
+                    label={label}
+                  />
+                </motion.div>
               ))}
             </div>
           </motion.div>
         </motion.div>
 
-        {/* Contact Form */}
+        {/* Contact Form - keep as is */}
         <div>
           <ContactForm />
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

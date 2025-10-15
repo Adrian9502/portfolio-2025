@@ -4,6 +4,8 @@ import Title from "../components/Title";
 import { projectsData } from "../utils/projects.data";
 import ProjectsCard from "../components/ProjectsCard";
 import { ArrowRight, Eye } from "lucide-react";
+import * as motion from "motion/react-client";
+import { staggerContainer, cardEntrance } from "../../utils/spaceAnimations";
 import "../styles/projectsButton.css";
 
 const ProjectsPreview: React.FC = () => {
@@ -34,25 +36,71 @@ const ProjectsPreview: React.FC = () => {
   return (
     <section
       id="Projects"
-      className="p-2 mt-10 py-10 flex-col gap-8 overflow-hidden flex items-center justify-center sm:p-14 mb-32"
+      className="p-2 mt-10 py-10 flex-col gap-8 overflow-hidden flex items-center justify-center sm:p-14 mb-32 relative"
     >
+      {/* Add floating particles */}
+      <motion.div
+        className="absolute top-10 right-1/4 w-2 h-2 bg-neon-cyan rounded-full shadow-[0_0_10px_2px_#06b6d4]"
+        animate={{
+          y: [0, -25, 0],
+          opacity: [0.4, 1, 0.4],
+        }}
+        transition={{
+          duration: 5,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
+      <motion.div
+        className="absolute bottom-10 left-1/4 w-3 h-3 bg-neon-purple rounded-full shadow-[0_0_15px_2px_#7e2de8]"
+        animate={{
+          y: [0, 25, 0],
+          opacity: [0.5, 1, 0.5],
+        }}
+        transition={{
+          duration: 6,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 1.5,
+        }}
+      />
+
       <Title title="Turning ideas into working systems." />
 
-      {/* Projects Grid - Only 3 projects */}
-      <div className="w-full max-w-7xl md:px-4 py-6 px-10  lg:px-10 mx-auto grid gap-6 sm:gap-8 md:gap-10 lg:gap-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      {/* Projects Grid with animation */}
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-50px" }}
+        className="w-full max-w-7xl md:px-4 py-6 px-10 lg:px-10 mx-auto grid gap-6 sm:gap-8 md:gap-10 lg:gap-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+      >
         {displayProjects.slice(0, 3).map((project, index) => (
-          <ProjectsCard key={project.id} project={project} index={index} />
+          <motion.div key={project.id} variants={cardEntrance}>
+            <ProjectsCard project={project} index={index} />
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
 
-      {/* View All Button */}
-      <div className="flex flex-col items-center gap-4 sm:gap-6 mt-8 sm:mt-12 px-4">
+      {/* View All Button with animation */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.3 }}
+        className="flex flex-col items-center gap-4 sm:gap-6 mt-8 sm:mt-12 px-4"
+      >
         <p className="text-slate-400 font-orbitron text-center max-w-md text-sm sm:text-base">
           I've built {projectsData.length}+ projects exploring different
           technologies and ideas — you can explore all of them below.
         </p>
 
-        <button onClick={handleViewAll} className="futuristic-button">
+        <motion.button
+          onClick={handleViewAll}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="futuristic-button"
+        >
           <div className="futuristic-button-content">
             <Eye
               size={20}
@@ -64,8 +112,8 @@ const ProjectsPreview: React.FC = () => {
               className="button-icon-right transition-transform flex-shrink-0"
             />
           </div>
-        </button>
-      </div>
+        </motion.button>
+      </motion.div>
     </section>
   );
 };

@@ -8,6 +8,8 @@ import {
 } from "../utils/certifications.data";
 import CertificationCard from "../components/CertificationCard";
 import CertificationModal from "../components/CertificationModal";
+import * as motion from "motion/react-client";
+import { staggerContainer, cardEntrance } from "../../utils/spaceAnimations";
 
 const AllCertifications: React.FC = () => {
   const navigate = useNavigate();
@@ -32,54 +34,19 @@ const AllCertifications: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const filteredCertifications =
-    filter === "all"
-      ? certificationsData
-      : certificationsData.filter((cert) =>
-          filter === "linkedin"
-            ? cert.issuer === "LinkedIn"
-            : cert.issuer.includes("Coursera")
-        );
-
-  // Function to get count for each category
-  const getCategoryCount = (
-    category: "all" | "linkedin" | "coursera"
-  ): number => {
-    if (category === "all") return certificationsData.length;
-    if (category === "linkedin")
-      return certificationsData.filter((cert) => cert.issuer === "LinkedIn")
-        .length;
-    return certificationsData.filter((cert) => cert.issuer.includes("Coursera"))
-      .length;
-  };
-
-  const filterOptions: {
-    value: "all" | "linkedin" | "coursera";
-    label: string;
-  }[] = [
-    { value: "all", label: "All Certifications" },
-    { value: "linkedin", label: "LinkedIn Learning" },
-    { value: "coursera", label: "Google - Coursera" },
-  ];
-
   const handleBack = () => {
+    const scrollPosition = sessionStorage.getItem("certScrollPosition");
     navigate("/");
-
-    // Restore scroll position after navigation
-    setTimeout(() => {
-      const savedScrollPosition = sessionStorage.getItem("certScrollPosition");
-      if (savedScrollPosition) {
-        window.scrollTo(0, parseInt(savedScrollPosition, 10));
+    if (scrollPosition) {
+      setTimeout(() => {
+        window.scrollTo(0, parseInt(scrollPosition));
         sessionStorage.removeItem("certScrollPosition");
-      }
-    }, 100);
+      }, 100);
+    }
   };
 
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const handleCardClick = (certification: Certification) => {
@@ -92,49 +59,130 @@ const AllCertifications: React.FC = () => {
     setTimeout(() => setSelectedCertification(null), 300);
   };
 
+  const filteredCertifications =
+    filter === "all"
+      ? certificationsData
+      : certificationsData.filter(
+          (cert) => cert.issuer.toLowerCase() === filter
+        );
+
+  const getCategoryCount = (
+    category: "all" | "linkedin" | "coursera"
+  ): number => {
+    if (category === "all") return certificationsData.length;
+    return certificationsData.filter(
+      (cert) => cert.issuer.toLowerCase() === category
+    ).length;
+  };
+
+  const filterOptions: {
+    value: "all" | "linkedin" | "coursera";
+    label: string;
+  }[] = [
+    { value: "all", label: "All Certifications" },
+    { value: "linkedin", label: "LinkedIn Learning" },
+    { value: "coursera", label: "Coursera" },
+  ];
+
   return (
     <>
       <div className="min-h-screen pt-20">
+        {/* Floating particles */}
+        <motion.div
+          className="absolute top-40 right-20 w-2 h-2 bg-neon-purple rounded-full shadow-[0_0_10px_2px_#7e2de8]"
+          animate={{
+            y: [0, -20, 0],
+            x: [0, 15, 0],
+            opacity: [0.5, 1, 0.5],
+          }}
+          transition={{
+            duration: 5,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+        <motion.div
+          className="absolute bottom-40 left-20 w-3 h-3 bg-neon-cyan rounded-full shadow-[0_0_15px_2px_#06b6d4]"
+          animate={{
+            y: [0, 20, 0],
+            x: [0, -15, 0],
+            opacity: [0.6, 1, 0.6],
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1,
+          }}
+        />
+
         {/* Fixed Back Button */}
-        <div className="fixed top-4 left-4 z-50">
-          <button
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          className="fixed top-4 left-4 z-50"
+        >
+          <motion.button
             onClick={handleBack}
+            whileHover={{ scale: 1.05, x: -5 }}
+            whileTap={{ scale: 0.95 }}
             className="flex items-center gap-2 px-4 py-2 bg-slate-950/80 backdrop-blur-sm border border-slate-700 rounded-lg text-slate-300 hover:text-neon-cyan hover:border-neon-cyan/50 transition-all duration-300 font-tektur"
           >
             <ArrowLeft size={20} />
             Back to Home
-          </button>
-        </div>
+          </motion.button>
+        </motion.div>
 
         {/* Back to Top Button */}
         {showBackToTop && (
-          <button
+          <motion.button
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0 }}
             onClick={scrollToTop}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
             className="fixed bottom-6 right-6 z-50 p-3 bg-neon-purple hover:bg-neon-purple/80 text-white rounded-full shadow-lg hover:shadow-[0_0_20px_rgba(126,45,232,0.5)] transition-all duration-300"
             aria-label="Back to top"
           >
             <ArrowUp size={24} />
-          </button>
+          </motion.button>
         )}
 
         <section className="p-2 py-10 flex-col gap-8 overflow-hidden flex items-center justify-center sm:p-14">
           <Title title="All Certifications: Every star that lights my path" />
 
           {/* Certification Stats */}
-          <div className="w-[80%] mx-auto text-center mb-8 z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="w-[80%] mx-auto text-center mb-8 z-10"
+          >
             <p className="text-slate-400 font-tektur text-md lg:text-lg">
               These {certificationsData.length} certifications showcase my
               commitment to continuous learning and professional development.
             </p>
-          </div>
+          </motion.div>
 
           {/* Filter Buttons with Counts */}
-          <div className="flex flex-wrap z-10 justify-center gap-4 mb-8 w-[80%] mx-auto">
-            {filterOptions.map(({ value, label }) => {
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="flex flex-wrap z-10 justify-center gap-4 mb-8 w-[80%] mx-auto"
+          >
+            {filterOptions.map(({ value, label }, index) => {
               const count = getCategoryCount(value);
               return (
-                <button
+                <motion.button
                   key={value}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.3, delay: 0.3 + index * 0.05 }}
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
                   onClick={() => setFilter(value)}
                   className={`px-6 py-3 rounded-2xl font-tektur text-xs lg:text-sm transition-all duration-300 flex items-center gap-2 ${
                     filter === value
@@ -152,25 +200,37 @@ const AllCertifications: React.FC = () => {
                   >
                     {count}
                   </span>
-                </button>
+                </motion.button>
               );
             })}
-          </div>
+          </motion.div>
 
-          {/* Certifications Grid */}
-          <div className="w-[80%] mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
+          {/* Certifications Grid with Animation */}
+          <motion.div
+            key={filter}
+            variants={staggerContainer}
+            initial="hidden"
+            animate="visible"
+            className="w-[80%] mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4"
+          >
             {filteredCertifications.map((certification, index) => (
-              <CertificationCard
-                key={certification.id}
-                certification={certification}
-                index={index}
-                onClick={() => handleCardClick(certification)}
-              />
+              <motion.div key={certification.id} variants={cardEntrance}>
+                <CertificationCard
+                  certification={certification}
+                  index={index}
+                  onClick={() => handleCardClick(certification)}
+                />
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
 
           {/* Results Summary */}
-          <div className="w-[80%] mx-auto text-center mt-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="w-[80%] mx-auto text-center mt-8"
+          >
             <p className="text-slate-400 font-tektur text-sm">
               Showing {filteredCertifications.length} of{" "}
               {certificationsData.length} certifications
@@ -182,10 +242,15 @@ const AllCertifications: React.FC = () => {
                 </span>
               )}
             </p>
-          </div>
+          </motion.div>
 
           {/* Learning Platforms Info */}
-          <div className="w-[80%] mx-auto text-center mt-12 p-8 border border-slate-800 rounded-2xl bg-slate-900/30">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="w-[80%] mx-auto text-center mt-12 p-8 border border-slate-800 rounded-2xl bg-slate-900/30"
+          >
             <h3 className="text-xl font-tektur font-medium bg-gradient-to-r from-neon-cyan to-neon-purple bg-clip-text text-transparent mb-4">
               Continuous Learning
             </h3>
@@ -210,7 +275,7 @@ const AllCertifications: React.FC = () => {
                 View LinkedIn Profile
               </a>
             </div>
-          </div>
+          </motion.div>
         </section>
       </div>
 

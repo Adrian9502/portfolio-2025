@@ -8,6 +8,8 @@ import {
   Certification,
 } from "../utils/certifications.data";
 import { ArrowRight, Award } from "lucide-react";
+import * as motion from "motion/react-client";
+import { staggerContainer, cardEntrance } from "../../utils/spaceAnimations";
 import "../styles/projectsButton.css";
 
 const CertificationPreview: React.FC = () => {
@@ -39,30 +41,77 @@ const CertificationPreview: React.FC = () => {
     <>
       <section
         id="Certification"
-        className="p-2 mt-10 py-10 flex-col gap-8 overflow-hidden flex items-center justify-center sm:p-14 mb-32"
+        className="p-2 mt-10 py-10 flex-col gap-8 overflow-hidden flex items-center justify-center sm:p-14 mb-32 relative"
       >
+        {/* Add floating particles */}
+        <motion.div
+          className="absolute top-1/3 left-1/4 w-2 h-2 bg-neon-purple rounded-full shadow-[0_0_10px_2px_#7e2de8]"
+          animate={{
+            y: [0, 20, 0],
+            x: [0, -15, 0],
+            opacity: [0.5, 1, 0.5],
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+        <motion.div
+          className="absolute bottom-1/4 right-1/4 w-3 h-3 bg-neon-cyan rounded-full shadow-[0_0_15px_2px_#06b6d4]"
+          animate={{
+            y: [0, -20, 0],
+            x: [0, 15, 0],
+            opacity: [0.6, 1, 0.6],
+          }}
+          transition={{
+            duration: 5,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1,
+          }}
+        />
+
         <Title title="Milestones that mark my growth" />
 
-        {/* Certifications Grid - Only 4 certifications */}
-        <div className="w-[80%] mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        {/* Certifications Grid with animation */}
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          className="w-[80%] mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+        >
           {displayCertifications.map((certification, index) => (
-            <CertificationCard
-              key={certification.id}
-              certification={certification}
-              index={index}
-              onClick={() => handleCardClick(certification)}
-            />
+            <motion.div key={certification.id} variants={cardEntrance}>
+              <CertificationCard
+                certification={certification}
+                index={index}
+                onClick={() => handleCardClick(certification)}
+              />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        {/* View All Button */}
-        <div className="flex flex-col items-center gap-4 sm:gap-6 mt-8 sm:mt-12 px-4">
+        {/* View All Button with animation */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="flex flex-col items-center gap-4 sm:gap-6 mt-8 sm:mt-12 px-4"
+        >
           <p className="text-slate-400 font-tektur text-center max-w-md text-sm sm:text-base">
             I've earned {certificationsData.length} certifications from top
             platforms, expanding my knowledge across various domains.
           </p>
 
-          <button onClick={handleViewAll} className="futuristic-button">
+          <motion.button
+            onClick={handleViewAll}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="futuristic-button"
+          >
             <div className="futuristic-button-content">
               <Award
                 size={20}
@@ -74,8 +123,8 @@ const CertificationPreview: React.FC = () => {
                 className="button-icon-right transition-transform flex-shrink-0"
               />
             </div>
-          </button>
-        </div>
+          </motion.button>
+        </motion.div>
       </section>
 
       {/* Modal */}
