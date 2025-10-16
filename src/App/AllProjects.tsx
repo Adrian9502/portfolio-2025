@@ -143,7 +143,7 @@ const AllProjects: React.FC = () => {
       )}
 
       <section className="p-2 py-10 flex-col gap-8 overflow-hidden flex items-center justify-center sm:p-14">
-        <Title title="All Projects: Every mission in my orbit" />
+        <Title title="All Projects: Every mission in my orbit." />
 
         {/* Project Stats */}
         <motion.div
@@ -203,7 +203,7 @@ const AllProjects: React.FC = () => {
           variants={staggerContainer}
           initial="hidden"
           animate="visible"
-          className="w-full max-w-7xl md:px-4 py-6 px-10 lg:px-10 mx-auto grid gap-6 sm:gap-8 md:gap-10 lg:gap-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+          className="w-full max-w-7xl md:px-4 py-6 px-10 lg:px-10 mx-auto grid gap-6 sm:gap-8 md:gap-10 z-10 lg:gap-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
         >
           {filteredProjects.map((project, index) => (
             <motion.div key={project.id} variants={cardEntrance}>

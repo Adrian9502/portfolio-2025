@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ExternalLink, Calendar, Award } from "lucide-react";
+import { X, ExternalLink, Calendar, Award, Clock3 } from "lucide-react";
 import { Certification } from "../utils/certifications.data";
 
 interface CertificationModalProps {
@@ -100,6 +100,14 @@ const CertificationModal: React.FC<CertificationModalProps> = ({
                   />
                   <span className="text-sm">
                     Completed on {certification.date}
+                  </span>
+                </div>
+
+                {/* Time taken */}
+                <div className="flex items-center gap-2 text-slate-400 font-poppins">
+                  <Clock3 className="text-neon-cyan flex-shrink-0" size={18} />
+                  <span className="text-sm">
+                    Duration: {certification.timeTaken}
                   </span>
                 </div>
 

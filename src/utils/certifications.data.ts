@@ -16,6 +16,7 @@ export interface Certification {
   issuer: string;
   date: string;
   credentialId?: string;
+  timeTaken?: string;
   credentialUrl?: string;
   imageUrl: string;
 }
@@ -27,6 +28,7 @@ export const certificationsData: Certification[] = [
       "Career Essentials in Software Development by Microsoft and LinkedIn",
     issuer: "LinkedIn",
     date: "Aug 28, 2024",
+    timeTaken: "6 hours 16mins",
     credentialUrl:
       "https://www.linkedin.com/learning/certificates/494f0ff398c9359c5e1d7714520d48b37b8d0deb6dbeded5c1c8c008922d470c?trk=share_certificate",
     imageUrl: certificate1,
@@ -36,6 +38,7 @@ export const certificationsData: Certification[] = [
     title: "Introduction to Career Skills in Software Development",
     issuer: "LinkedIn",
     date: "Aug 25, 2024",
+    timeTaken: "1 hour 57mins",
     credentialUrl:
       "https://www.linkedin.com/learning/certificates/dbc20b1ddafd2ecdf717296e9f0445ccdeec59c37cc2f4a27bb28feef2e3caa3?trk=share_certificate",
     imageUrl: certificate2,
@@ -45,6 +48,7 @@ export const certificationsData: Certification[] = [
     title: "Programming Foundations: Beyond the Fundamentals",
     issuer: "LinkedIn",
     date: "Aug 28, 2024",
+    timeTaken: "2 hours 6mins",
     credentialUrl:
       "https://www.linkedin.com/learning/certificates/22e9ec2c563c683139ecfe9a4bdb1f836ef0997d85782fda95d5b661ef002544?trk=share_certificate",
     imageUrl: certificate3,
@@ -52,6 +56,7 @@ export const certificationsData: Certification[] = [
   {
     id: "4",
     title: "Programming Foundations Fundamentals",
+    timeTaken: "2 hours 12mins",
     issuer: "LinkedIn",
     date: "Aug 28, 2024",
     credentialUrl:
@@ -63,7 +68,8 @@ export const certificationsData: Certification[] = [
   {
     id: "5",
     title: "Introduction to AI",
-    issuer: "Google - Coursera",
+    issuer: "coursera",
+    timeTaken: "1 hour",
     date: "Oct 3, 2025",
     credentialUrl:
       "https://www.coursera.org/account/accomplishments/verify/4VEJ9C3TZ8K4",
@@ -73,7 +79,8 @@ export const certificationsData: Certification[] = [
   {
     id: "6",
     title: "Foundation of User Experience (UX) Design",
-    issuer: "Google - Coursera",
+    issuer: "coursera",
+    timeTaken: "13 hours",
     date: "Oct 3, 2025",
     credentialUrl:
       "https://www.coursera.org/account/accomplishments/verify/2B9DMQD9H12I",
@@ -83,8 +90,9 @@ export const certificationsData: Certification[] = [
   {
     id: "7",
     title: "Start the UX Design Process: Empathize, Define, and Ideate",
-    issuer: "Google - Coursera",
+    issuer: "coursera",
     date: "Oct 3, 2025",
+    timeTaken: "21 hours",
     credentialUrl:
       "https://www.coursera.org/account/accomplishments/verify/VZK75STWSNU6",
     imageUrl: certificate7,
@@ -93,8 +101,9 @@ export const certificationsData: Certification[] = [
   {
     id: "8",
     title: "Use AI Responsibly",
-    issuer: "Google - Coursera",
+    issuer: "coursera",
     date: "Oct 3, 2025",
+    timeTaken: "1 hour",
     credentialUrl:
       "https://www.coursera.org/account/accomplishments/verify/TYELQBVF8G52",
     imageUrl: certificate8,
@@ -103,8 +112,9 @@ export const certificationsData: Certification[] = [
   {
     id: "9",
     title: "Maximize Productivity With AI Tools",
-    issuer: "Google - Coursera",
+    issuer: "coursera",
     date: "Oct 3, 2025",
+    timeTaken: "1 hour",
     credentialUrl:
       "https://www.coursera.org/account/accomplishments/verify/2ZD6U7WJSL9Q",
     imageUrl: certificate9,
@@ -113,8 +123,9 @@ export const certificationsData: Certification[] = [
   {
     id: "10",
     title: "Discover the Art of Prompting",
-    issuer: "Google - Coursera",
+    issuer: "coursera",
     date: "Oct 3, 2025",
+    timeTaken: "2 hours",
     credentialUrl:
       "https://www.coursera.org/account/accomplishments/verify/LMH935S3OWLN",
     imageUrl: certificate10,
