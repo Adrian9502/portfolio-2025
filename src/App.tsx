@@ -15,7 +15,7 @@ function App() {
   return (
     <PerformanceProvider>
       <Router>
-        <PerformanceMonitor show={true} position="top-right" />
+        <PerformanceMonitor show={false} position="top-right" />
         <Layout>
           <Routes>
             <Route path={ROUTES.HOME} element={<Pages />} />
