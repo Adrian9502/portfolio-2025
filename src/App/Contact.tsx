@@ -6,7 +6,7 @@ import SocialIcons from "../components/SocialIcons";
 import socialLinks from "../utils/socialLinks";
 import * as motion from "motion/react-client";
 import { staggerContainer, slideInLeft } from "../../utils/spaceAnimations";
-
+import { useComponentPerformance } from "../hooks/useComponentPerformance";
 interface SocialLink {
   Icon: React.ElementType;
   link: string;
@@ -14,6 +14,8 @@ interface SocialLink {
 }
 
 const Contact: React.FC = () => {
+  useComponentPerformance("Contact");
+
   const contactInfo = [
     {
       icon: Mail,

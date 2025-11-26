@@ -11,8 +11,9 @@ import { ArrowRight, Award } from "lucide-react";
 import * as motion from "motion/react-client";
 import { staggerContainer, cardEntrance } from "../../utils/spaceAnimations";
 import "../styles/projectsButton.css";
-
+import { useComponentPerformance } from "../hooks/useComponentPerformance";
 const CertificationPreview: React.FC = () => {
+  useComponentPerformance("CertificationPreview");
   const navigate = useNavigate();
   const [selectedCertification, setSelectedCertification] =
     useState<Certification | null>(null);

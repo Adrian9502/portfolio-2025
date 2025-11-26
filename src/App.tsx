@@ -7,18 +7,28 @@ import { ROUTES } from "../utils/routes";
 import Layout from "./components/Layout";
 import NotFound from "./components/NotFound";
 
+// Performance monitoring context
+import PerformanceMonitor from "./components/PerformanceMonitor";
+import { PerformanceProvider } from "./context/PerformanceProvider";
+
 function App() {
   return (
-    <Router>
-      <Layout>
-        <Routes>
-          <Route path={ROUTES.HOME} element={<Pages />} />
-          <Route path="*" element={<NotFound />} />
-          <Route path={ROUTES.PROJECTS} element={<AllProjects />} />
-          <Route path={ROUTES.CERTIFICATIONS} element={<AllCertifications />} />
-        </Routes>
-      </Layout>
-    </Router>
+    <PerformanceProvider>
+      <Router>
+        <PerformanceMonitor show={true} position="top-right" />
+        <Layout>
+          <Routes>
+            <Route path={ROUTES.HOME} element={<Pages />} />
+            <Route path="*" element={<NotFound />} />
+            <Route path={ROUTES.PROJECTS} element={<AllProjects />} />
+            <Route
+              path={ROUTES.CERTIFICATIONS}
+              element={<AllCertifications />}
+            />
+          </Routes>
+        </Layout>
+      </Router>
+    </PerformanceProvider>
   );
 }
 

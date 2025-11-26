@@ -7,9 +7,11 @@ import { ArrowRight, Eye } from "lucide-react";
 import * as motion from "motion/react-client";
 import { staggerContainer, cardEntrance } from "../../utils/spaceAnimations";
 import "../styles/projectsButton.css";
+import { useComponentPerformance } from "../hooks/useComponentPerformance";
 
 const ProjectsPreview: React.FC = () => {
   const navigate = useNavigate();
+  useComponentPerformance("ProjectsPreview");
 
   // Get only the first 3 featured projects
   const featuredProjects = projectsData
@@ -40,7 +42,7 @@ const ProjectsPreview: React.FC = () => {
     >
       {/* Add floating particles */}
       <motion.div
-        className="absolute top-10 right-1/4 w-2 h-2 bg-neon-cyan rounded-full shadow-[0_0_10px_2px_#06b6d4]"
+        className="absolute top-10 right-1/4 w-2 h-2 bg-neon-cyan/80 rounded-full will-change-transform"
         animate={{
           y: [0, -25, 0],
           opacity: [0.4, 1, 0.4],
@@ -48,20 +50,7 @@ const ProjectsPreview: React.FC = () => {
         transition={{
           duration: 5,
           repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-      <motion.div
-        className="absolute bottom-10 left-1/4 w-3 h-3 bg-neon-purple rounded-full shadow-[0_0_15px_2px_#7e2de8]"
-        animate={{
-          y: [0, 25, 0],
-          opacity: [0.5, 1, 0.5],
-        }}
-        transition={{
-          duration: 6,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 1.5,
+          ease: "linear",
         }}
       />
 

@@ -1,7 +1,11 @@
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
+// Performance monitor
+import { useComponentPerformance } from "../hooks/useComponentPerformance";
+
 function Landing() {
+  useComponentPerformance("Landing");
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -15,7 +19,9 @@ function Landing() {
     canvas.height = window.innerHeight;
 
     const particles: Particle[] = [];
-    const particleCount = 50;
+    // Reduce particle count for mobile
+    const isMobile = window.innerWidth < 768;
+    const particleCount = isMobile ? 20 : 30; // Reduced from 50
 
     class Particle {
       x: number;
@@ -29,8 +35,8 @@ function Landing() {
         this.x = Math.random() * canvas!.width;
         this.y = Math.random() * canvas!.height;
         this.size = Math.random() * 2 + 1;
-        this.speedX = Math.random() * 0.5 - 0.25;
-        this.speedY = Math.random() * 0.5 - 0.25;
+        this.speedX = Math.random() * 0.3 - 0.15; // Reduced speed
+        this.speedY = Math.random() * 0.3 - 0.15;
         this.opacity = Math.random() * 0.5 + 0.2;
       }
 
@@ -45,7 +51,7 @@ function Landing() {
       }
 
       draw() {
-        ctx!.fillStyle = `rgba(0, 255, 255, ${this.opacity})`;
+        ctx!.fillStyle = `rgba(6, 182, 212, ${this.opacity})`;
         ctx!.beginPath();
         ctx!.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx!.fill();
@@ -56,18 +62,28 @@ function Landing() {
       particles.push(new Particle());
     }
 
-    function animate() {
+    let animationFrameId: number;
+    let lastTime = 0;
+    const fps = 30; // Limit to 30 FPS instead of 60
+    const interval = 1000 / fps;
+
+    function animate(currentTime: number) {
+      animationFrameId = requestAnimationFrame(animate);
+
+      const deltaTime = currentTime - lastTime;
+      if (deltaTime < interval) return;
+
+      lastTime = currentTime - (deltaTime % interval);
+
       ctx!.clearRect(0, 0, canvas!.width, canvas!.height);
 
       particles.forEach((particle) => {
         particle.update();
         particle.draw();
       });
-
-      requestAnimationFrame(animate);
     }
 
-    animate();
+    animate(0);
 
     const handleResize = () => {
       canvas.width = window.innerWidth;
@@ -75,7 +91,10 @@ function Landing() {
     };
 
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      cancelAnimationFrame(animationFrameId);
+    };
   }, []);
 
   // Smooth scroll function
@@ -140,76 +159,70 @@ function Landing() {
 
       {/* Animated Gradient Orbs with floating effect */}
       <motion.div
-        className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-[120px]"
-        animate={{
-          scale: [1, 1.1, 1],
-          opacity: [0.3, 0.5, 0.3],
-          x: [0, 20, 0],
-          y: [0, -20, 0],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          repeatType: "reverse",
-          ease: "easeInOut",
-        }}
-      />
-      <motion.div
-        className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-[120px]"
-        animate={{
-          scale: [1, 1.15, 1],
-          opacity: [0.3, 0.5, 0.3],
-          x: [0, -20, 0],
-          y: [0, 20, 0],
-        }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-          repeatType: "reverse",
-          ease: "easeInOut",
-          delay: 1,
-        }}
-      />
-      <motion.div
-        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[150px]"
+        className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-[80px] will-change-transform"
         animate={{
           scale: [1, 1.05, 1],
           opacity: [0.2, 0.3, 0.2],
         }}
         transition={{
+          duration: 8,
+          repeat: Infinity,
+          repeatType: "reverse",
+          ease: "linear",
+        }}
+      />
+      <motion.div
+        className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-[80px] will-change-transform"
+        animate={{
+          scale: [1, 1.1, 1],
+          opacity: [0.2, 0.3, 0.2],
+        }}
+        transition={{
+          duration: 10,
+          repeat: Infinity,
+          repeatType: "reverse",
+          ease: "linear",
+          delay: 1,
+        }}
+      />
+      <motion.div
+        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-[100px] will-change-transform"
+        animate={{
+          scale: [1, 1.05, 1],
+          opacity: [0.1, 0.2, 0.1],
+        }}
+        transition={{
           duration: 12,
           repeat: Infinity,
           repeatType: "reverse",
-          ease: "easeInOut",
+          ease: "linear",
           delay: 0.5,
         }}
       />
 
       {/* Floating decorative particles */}
       <motion.div
-        className="absolute top-20 right-1/4 w-2 h-2 bg-neon-cyan rounded-full shadow-[0_0_10px_2px_#06b6d4]"
+        className="absolute top-20 right-1/4 w-2 h-2 bg-neon-cyan/80 rounded-full will-change-transform"
         animate={{
           y: [0, -30, 0],
-          x: [0, 15, 0],
           opacity: [0.5, 1, 0.5],
         }}
         transition={{
           duration: 6,
           repeat: Infinity,
-          ease: "easeInOut",
+          ease: "linear",
         }}
       />
       <motion.div
-        className="absolute bottom-32 left-1/4 w-3 h-3 bg-neon-purple rounded-full shadow-[0_0_15px_2px_#7e2de8]"
+        className="absolute bottom-32 left-1/4 w-3 h-3 bg-neon-purple/80 rounded-full will-change-transform"
         animate={{
           y: [0, 30, 0],
-          x: [0, -15, 0],
           opacity: [0.6, 1, 0.6],
         }}
         transition={{
           duration: 7,
           repeat: Infinity,
-          ease: "easeInOut",
+          ease: "linear",
           delay: 1,
         }}
       />

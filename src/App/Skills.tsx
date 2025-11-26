@@ -5,8 +5,10 @@ import { useInView } from "motion/react";
 import SkillsCard from "../components/SkillsCard";
 import Title from "../components/Title";
 import { staggerContainer, cardEntrance } from "../../utils/spaceAnimations";
+import { useComponentPerformance } from "../hooks/useComponentPerformance";
 
 export default function Skills() {
+  useComponentPerformance("Skills");
   const frontendRef = useRef(null);
   const backendRef = useRef(null);
   const toolsRef = useRef(null);

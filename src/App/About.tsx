@@ -3,6 +3,8 @@ import * as motion from "motion/react-client";
 import Title from "../components/Title";
 import "../styles/glitch.css";
 import Code from "../components/Code";
+// Performance monitor
+import { useComponentPerformance } from "../hooks/useComponentPerformance";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -10,6 +12,7 @@ const fadeInUp = {
 };
 
 function About() {
+  useComponentPerformance("About");
   const nameRef = React.useRef(null);
   const descriptionRef = React.useRef(null);
 

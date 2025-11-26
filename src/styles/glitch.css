@@ -468,3 +468,16 @@
     center no-repeat;
   background-size: cover;
 }
+
+/* Disable heavy animations on mobile */
+/* @media (max-width: 768px) {
+  .glitch span,
+  .glitch::before,
+  .glitch::after {
+    animation: none !important;
+  }
+
+  .hero.glitch {
+    animation: none !important;
+  }
+} */
