@@ -515,4 +515,18 @@ export const projectsData: Project[] = [
     featured: false,
     category: "web",
   },
+  // Ruby on rails todo list app with postgres database
+  {
+    id: "34",
+    title: "To-Do Lists (Ruby on Rails)",
+    description:
+      "A fully functional To-Do List app built with Ruby on Rails and PostgreSQL. Implements CRUD functionality, MVC architecture, and Tailwind CSS styling. Deployed on Render with a cloud database (Neon Postgres).",
+    technologies: ["Ruby on Rails", "PostgreSQL", "Tailwind CSS", "Render"],
+    liveUrl: "https://rails-crash-course-todo-list.onrender.com/",
+    githubUrl: "https://github.com/Adrian9502/rails-crash-course-todo-list",
+    imageUrl:
+      "https://raw.githubusercontent.com/Adrian9502/rails-crash-course-todo-list/main/image.png",
+    featured: false,
+    category: "web",
+  },
 ];
