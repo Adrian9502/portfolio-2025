@@ -1,7 +1,7 @@
 import React from "react";
 import Title from "../components/Title";
 import ContactForm from "../components/ContactForm";
-import { Mail, MapPin } from "lucide-react";
+import { ExternalLink, Mail, MapPin } from "lucide-react";
 import SocialIcons from "../components/SocialIcons";
 import socialLinks from "../utils/socialLinks";
 import * as motion from "motion/react-client";
@@ -156,6 +156,30 @@ const Contact: React.FC = () => {
                 </motion.div>
               ))}
             </div>
+
+            {/* Portfolio v1 Link */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="w-[80%] mx-auto mt-12 pt-8 border-t border-slate-400"
+            >
+              <motion.a
+                href="https://johnadrianbontov1.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="flex items-center justify-center gap-2 text-slate-200 hover:text-neon-cyan transition-colors font-tektur text-sm group"
+              >
+                <span>Check out my previous portfolio (v1)</span>
+                <ExternalLink
+                  size={16}
+                  className="group-hover:translate-x-1 transition-transform"
+                />
+              </motion.a>
+            </motion.div>
           </motion.div>
         </motion.div>
 
