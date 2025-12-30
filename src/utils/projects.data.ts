@@ -527,6 +527,6 @@ export const projectsData: Project[] = [
     imageUrl:
       "https://raw.githubusercontent.com/Adrian9502/rails-crash-course-todo-list/main/image.png",
     featured: false,
-    category: "web",
+    category: ["web", "fullstack"],
   },
 ];
