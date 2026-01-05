@@ -6,6 +6,7 @@ import LandingAndFooterGlow from "../components/LandingAndFooterGlow";
 import { BrowserView } from "react-device-detect";
 import { GlowMouse } from "../components/GlowMouse";
 import { ROUTES } from "../../utils/routes";
+import { Analytics } from "@vercel/analytics/next";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const location = useLocation();
@@ -14,6 +15,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   const isNotFoundPage = location.pathname === ROUTES.NOTFOUND;
   return (
     <main className="bg-dark relative">
+      <Analytics />
       <BrowserView>
         <GlowMouse />
       </BrowserView>

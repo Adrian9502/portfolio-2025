@@ -17,6 +17,7 @@
     "@splinetool/loader": "^1.9.62",
     "@splinetool/r3f-spline": "^1.0.2",
     "@tailwindcss/vite": "^4.0.3",
+    "@vercel/analytics": "^1.6.1",
     "gsap": "^3.12.7",
     "lucide-react": "^0.475.0",
     "motion": "^12.3.1",
