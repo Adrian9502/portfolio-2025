@@ -6,7 +6,7 @@ import LandingAndFooterGlow from "../components/LandingAndFooterGlow";
 import { BrowserView } from "react-device-detect";
 import { GlowMouse } from "../components/GlowMouse";
 import { ROUTES } from "../../utils/routes";
-import { Analytics } from "@vercel/analytics/next";
+import { Analytics } from "@vercel/analytics/react";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const location = useLocation();
